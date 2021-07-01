@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://huia.zwitterio.it"
+base_url = "/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -40,7 +40,7 @@ read_more = "read more"
 
 [extra.sidebar]
 # Enable/Disable sidebar
-active=true
+active=false
 
 # Include a text snippet
 # text_snippet="Some text here"
