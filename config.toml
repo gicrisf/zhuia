@@ -20,7 +20,7 @@ highlight_code = false
 
 [extra]
 # The max-width of the page content
-grid_size = "grid-sm"
+grid_size = "grid-md"
 
 # Default author for articles
 author = "You"
@@ -28,8 +28,8 @@ author = "You"
 # Menu items to display. You define a url and the name of the menu item.
 # NOTE: `$BASE_URL/` must be included in the url name.
 main_menu = [
-              {url="/about/", name="about"},
-              {url="/contact/", name="contact"},
+              {url="/tags/", name="tags"},
+              {url="/categories/", name="categories"},
 ]
 
 # Post metadata
@@ -39,9 +39,18 @@ show_categories = true
 read_more = "read more"
 
 [extra.sidebar]
+# Enable/Disable sidebar
 active=true
+
+# Include a text snippet
 # text_snippet="Some text here"
-tweets=true
+
+# Include search bar
+# TODO template
+
+# Embed twitter iframe
+tweets_by="cromo___"
+
 popular_tags=false
 archive=false
 syndicate=false

@@ -65,22 +65,18 @@
 {% endmacro taxonomies %}
 
 {% macro categories(categories) %}
-    :: {
     {%- for cat in categories -%}
         {%- if loop.last -%}
-            <a href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>
+            <a class="label label-rounded label-secondary p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a> |
         {%- else -%}
-            <a href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>,
-            {# end of if-check for whether last item or not #}
+            <a class="label label-rounded label-secondary p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>
         {%- endif -%}
-    {%- endfor -%}} {# <--- NOTE: OPEN CURLY BRACE #}
+    {%- endfor -%}
 {% endmacro categories %}
 
 {% macro tags(tags) %}
-    ::
     {% for tag in tags -%}
-        #<a href="{{get_taxonomy_url(kind="tags", name=tag )}}">{{ tag }}</a>
-        {# end of tags for-loop #}
+        <a href="{{get_taxonomy_url(kind="tags", name=tag )}}">#{{ tag }}</a>
     {% endfor -%}
 {% endmacro tags %}
 
