@@ -2,7 +2,6 @@
   width: 100%;
   height: $header-height-large;
   border-bottom: 1px solid rgba($gray-color, 0.2);
-  @extend .default-animation;
 
   font-size: 0.7rem;
   font-weight: 700;
@@ -46,7 +45,6 @@
 
   .navbar-section {
     height: $header-height-large;
-    @extend .default-animation;
 
     @include breakpoint(md) {
       margin-right: 2rem;
@@ -63,7 +61,6 @@
     svg, img {
       height: 42px;
       display: inherit;
-      @extend .default-animation;
     }
   }
 

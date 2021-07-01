@@ -1,0 +1,42 @@
+{% extends "index.html" -%}
+
+{%- block title %}
+    <title>Not Found - 404</title>
+    {# TODO: make some kind of social media linking, i guess? #}
+    {#%- include "snippets/social.html" %#}
+{%- endblock title -%}
+
+{%- block og_preview -%}
+{# og_preview not desired here #}
+{%- endblock og_preview -%}
+
+{%- block main -%}
+<div class="post">
+    <h1 class="post-title">
+        Not Found - 404
+    </h1>
+
+    <div class="post-content">
+      <p>
+        The page you requested was not found.<br>
+        You can try to find it by browsing the menus.
+      </p>
+      {# Check if there are menu items to render, yes if > 0 #}
+      {%- set num = config.extra.main_menu | length -%}
+      {% if num > 0 -%}
+          <ul>
+            {{ menu::items(menu=config.extra.main_menu) }}
+          </ul>
+      {% endif -%}
+
+    {% if config.extra.ddg_search %}
+    <p>
+      Otherwise, you can search all over the website from the search bar up here.
+    </p>
+
+    <!-- div class="search-container">{# TODO #}</div --> 
+
+    {% endif %}
+    </div>
+</div>
+{%- endblock main -%}

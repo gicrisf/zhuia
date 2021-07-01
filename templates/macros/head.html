@@ -1,6 +1,7 @@
 {% macro styling() %}
     <link rel="stylesheet" href="{{ get_url(path="spectre/spectre.css") }}">
     <link rel="stylesheet" href="{{ get_url(path="theme.css") }}">
+    <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
 
     {%- if config.extra.custom_css is defined -%}
         <link rel="stylesheet" href="{{ get_url(path="custom.css") }}">

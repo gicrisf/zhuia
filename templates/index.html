@@ -7,10 +7,10 @@
 {% import "macros/social.html" as social -%}
 {% import "macros/utils.html" as utils -%}
 {% import "macros/menu.html" as menu -%}
-{# import "macros/search.html" as search -#}
-{# import "macros/theme_switcher.html" as theme_switcher -#}
+{% import "macros/sidebar.html" as sidebar -%}
+{% import "macros/theme_switcher.html" as theme_switcher -%}
+{% import "macros/footer.html" as footer -%}
 {# import "macros/pagination.html" as pagination -#}
-{# import "macros/footer.html" as footer -#}
 {# import "macros/extended_footer.html" as extended_footer -#}
 
 <!DOCTYPE html>
@@ -65,9 +65,38 @@
 
       <section id="start">
         {%-  block main -%}
-        <section id="body-wrapper" class="section">
+        <section id="body-wrapper" class="section blog-listing">
           <section class="container {{ grid_size }}">
-            {{ lists::list_pages() }}
+            {%- if config.extra.sidebar.active -%}
+            <div class="columns">
+              <div id="item" class="column col-9 col-md-12 extra-spacing">
+                {{ lists::list_pages() }}
+              </div>
+              <div id="sidebar" class="column col-3 col-md-12">
+                <div class="sidebar-content">
+                  {% if config.extra.sidebar.text_snippet -%}
+                  {{ sidebar::text_snippet(content=config.extra.sidebar.text_snippet) }}
+                  {% endif -%}
+                  {% if config.extra.sidebar.tweets -%}
+                  {{ sidebar::tweets() }}
+                  {% endif -%}
+                  {% if config.extra.sidebar.popular_tags -%}
+                  {{ sidebar::popular_tags() }}
+                  {% endif -%}
+                  {% if config.extra.sidebar.archives -%}
+                  {{ sidebar::archives() }}
+                  {% endif -%}
+                  {% if config.extra.sidebar.syndicate -%}
+                  {{ sidebar::syndicate() }}
+                  {% endif -%}
+                </div><!--./sidebar-content-->
+              </div>
+            </div>
+            {% else %}
+            <div id="item">
+              {{ lists::list_pages() }}
+            </div>
+            {%- endif -%}{# sidebar active? #}
           </section>
         </section>
         {%- endblock main -%}
@@ -79,7 +108,7 @@
     {%- endblock pagination -%}
 
     {%- block footer -%}
-      {# footer::footer() #}
+      {{ footer::footer(grid_size=grid_size) }}
     {%- endblock footer -%}
 
     {%- block mobile -%}

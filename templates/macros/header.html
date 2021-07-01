@@ -14,7 +14,7 @@
           {# Check if there are menu items to render, yes if > 0 #}
           {%- set num = config.extra.main_menu | length -%}
           {% if num > 0 -%}
-              {{ menu::menu() }}
+            {{ menu::items(menu=config.extra.main_menu) }}
           {% endif -%}
           {% endif -%}
         </nav>

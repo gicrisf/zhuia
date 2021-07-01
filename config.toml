@@ -19,9 +19,8 @@ taxonomies = [
 highlight_code = false
 
 [extra]
-
-# The max-width of the theme, options include: `grid-xl`, `grid-lg`, and `grid-md`
-grid_size = "grid-md"
+# The max-width of the page content
+grid_size = "grid-sm"
 
 # Default author for articles
 author = "You"
@@ -38,3 +37,11 @@ show_author = true
 show_tags = true
 show_categories = true
 read_more = "read more"
+
+[extra.sidebar]
+active=true
+# text_snippet="Some text here"
+tweets=true
+popular_tags=false
+archive=false
+syndicate=false

@@ -1,76 +1,7 @@
 {% macro list_pages() %}
 <div class="posts">
-
     {%- for page in paginator.pages -%}
-
-    <div class="card post on-list">
-        {% if page.extra.cover_image %}
-        {% if page.extra.cover_image is matching("[.](jpg|jpeg|png|gif)$") %}
-        {% set parent_dir_rel_path = posts::parent_dir_rel_path(rel_path=page.relative_path) | trim %}
-        {% set imgpath = parent_dir_rel_path ~ "/" ~ page.extra.cover_image %}
-
-        <div class="card-image">
-          <a href="{{ page.permalink }}">
-          <img
-          alt="{{ page.title | striptags }}"
-          class="post-cover
-                {% if page.extra.cover_classes %}
-                {{ page.extra.cover_classes | join(sep=' ') }}
-                {% endif %}"
-          srcset="{{ resize_image(path=imgpath, op='fill', width=300, height=150) | safe }} 300w,
-                  {{ resize_image(path=imgpath, op='fill', width=600, height=300) | safe }} 600w,
-                  {{ resize_image(path=imgpath, op='fill', width=900, height=450) | safe }} 900w,
-                  {{ resize_image(path=imgpath, op='fill', width=1200, height=600) | safe }} 1200w,"
-          sizes="(max-width: 800px) 90vw,
-                  1200px"
-          />
-          </a>
-        </div><!--./card-image-->
-        {% endif %}{# matching #}
-        {% endif %}{# cover_image #}
-
-        <div class="card-header">
-          <div class="card-subtitle text-gray">
-            {{ posts::meta(page=page, author=config.extra.show_author) }}
-          </div>
-          <div class="card-title">
-            <h5 class="post-title">
-              <a href="{{ page.permalink }}">{{ page.title }}</a>
-            </h5>
-          </div>
-        </div><!--./card-header-->
-
-        <div class="card-body">
-          {% set show_read_more_btn = true %}
-
-          {%  if page.description -%}
-          {{ page.description }}
-          {% elif page.summary %}
-          {{ page.summary | striptags }}
-          {% else %}
-          {% set show_read_more_btn = false %}
-          {%  endif -%}
-
-          {% if show_read_more_btn %}
-          <div>
-            <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
-          </div>
-          {% else %}
-          <div>
-            <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_post }} →</a>
-          </div>
-          {% endif -%}
-        </div><!--./card-body-->
-
-        <div class="card-footer">
-          {{  posts::taxonomies(taxonomy=page.taxonomies,
-            disp_cat=config.extra.show_categories,
-            disp_tag=config.extra.show_tags) }}
-        </div><!--./card-footer-->
-    </div><!--./card-->
-    {# End of pagination for-loop #}
+    {{ posts::card(page=page) }}
     {%- endfor -%}
-    {#- I don't put pagination here like Terminal does. I don't like how
-    the buttons move with the size of post entries in the content div. -#}
 </div>
 {% endmacro list_pages %}
