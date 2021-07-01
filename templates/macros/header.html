@@ -1,0 +1,32 @@
+{% macro header(grid_size) %}
+<header id="header" class="section">
+  <section class="container {{ grid_size }}">
+    <nav class="navbar">
+      <section class="navbar-section logo">
+        {{ logo::logo() }}
+      </section><!-- ./logo -->
+      <section class="navbar-section desktop-menu">
+        <nav class="dropmenu animated">
+          {%- if config.languages -%}
+          {{ lang::langswitcher() }}
+          {%- endif -%}
+          {% if config.extra.main_menu -%}
+          {# Check if there are menu items to render, yes if > 0 #}
+          {%- set num = config.extra.main_menu | length -%}
+          {% if num > 0 -%}
+              {{ menu::menu() }}
+          {% endif -%}
+          {% endif -%}
+        </nav>
+      </section><!-- ./desktop-menu -->
+    </nav>
+  </section><!-- ./container -->
+</header>
+<div class="mobile-menu">
+  <div class="button_container" id="toggle">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+</div><!--./mobile-menu-->
+{% endmacro header %}

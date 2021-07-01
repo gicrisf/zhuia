@@ -1,4 +1,17 @@
-{# TODO - import macros #}
+{# Macros #}
+{% import "macros/head.html" as head -%}
+{% import "macros/logo.html" as logo -%}
+{% import "macros/header.html" as header -%}
+{% import "macros/lists.html" as lists -%}
+{% import "macros/posts.html" as posts -%}
+{% import "macros/social.html" as social -%}
+{% import "macros/utils.html" as utils -%}
+{% import "macros/menu.html" as menu -%}
+{# import "macros/search.html" as search -#}
+{# import "macros/theme_switcher.html" as theme_switcher -#}
+{# import "macros/pagination.html" as pagination -#}
+{# import "macros/footer.html" as footer -#}
+{# import "macros/extended_footer.html" as extended_footer -#}
 
 <!DOCTYPE html>
 <html lang="{{ config.default_language }}" data-theme="light" dir="ltr">
@@ -8,30 +21,69 @@
     {%- endblock title -%}
 
     {%- block general_meta -%}
+        {{ head::general_meta() }}
     {%- endblock general_meta -%}
 
     {%- block og_preview -%}
+        {{ social::og_preview() }}
     {%- endblock og_preview -%}
 
     {%- block twitter_preview -%}
+        {{ social::twitter_preview() }}
     {%- endblock twitter_preview -%}
 
     {%- block fonts -%}
+        {{ head::fonts() }}
     {%- endblock fonts -%}
 
     {%- block css -%}
+        {{ head::styling() }}
     {%- endblock css -%}
 
     {%- block favicon -%}
+        {{ head::favicon() }}
     {%- endblock favicon -%}
 
     {%- block rss -%}
+        {{ head::rss() }}
     {%- endblock rss -%}
 
     {%- block math -%}
+      {# TODO KaTeX #}
     {%- endblock math -%}
   </head>
-  <body>
+  <body id="top">
+    {%- if config.extra.grid_size -%}
+    {%- set grid_size = config.extra.grid_size -%}
+    {%- else -%}
+    {%- set grid_size = 'grid-md' -%}
+    {%- endif -%}
+    <div id="page-wrapper">
+      {%- block header -%}
+          {{ header::header(grid_size=grid_size) }}
+      {%- endblock header -%}
 
+      <section id="start">
+        {%-  block main -%}
+        <section id="body-wrapper" class="section">
+          <section class="container {{ grid_size }}">
+            {{ lists::list_pages() }}
+          </section>
+        </section>
+        {%- endblock main -%}
+      </section>
+    </div><!-- ./page-wrapper -->
+
+    {%- block pagination -%}
+      {# pagination::paginate() #}
+    {%- endblock pagination -%}
+
+    {%- block footer -%}
+      {# footer::footer() #}
+    {%- endblock footer -%}
+
+    {%- block mobile -%}
+      {# TODO #}
+    {%- endblock mobile -%}
   </body>
 </html>

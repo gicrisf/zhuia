@@ -7,10 +7,34 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
+# Built in taxonomies of huia.
+taxonomies = [
+           {name = "tags"},
+           {name = "categories"},
+]
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = false
 
 [extra]
-# Put all your custom variables here
+
+# The max-width of the theme, options include: `grid-xl`, `grid-lg`, and `grid-md`
+grid_size = "grid-md"
+
+# Default author for articles
+author = "You"
+
+# Menu items to display. You define a url and the name of the menu item.
+# NOTE: `$BASE_URL/` must be included in the url name.
+main_menu = [
+              {url="/about/", name="about"},
+              {url="/contact/", name="contact"},
+]
+
+# Post metadata
+show_author = true
+show_tags = true
+show_categories = true
+read_more = "read more"

@@ -1,0 +1,40 @@
+{% import "macros/pagination_page.html" as pagination_page -%}
+{% extends "index.html" -%}
+
+{%- block main -%}
+<section id="body-wrapper" class="section blog-listing">
+  <section class="container {{ grid_size }}">
+    {# breadcrumbs here #}
+
+    {%- block item -%}
+    <div class="content-item h-entry">
+      {# TODO image #}
+
+      <div class="content-title text-center">
+        <h1 class="post-title">
+            <a href="{{ page.permalink  }}">{{ page.title }}</a>
+        </h1>
+
+        {% if page.subtitle %}
+        <h3>{{ page.subtitle }}</h3>
+        {% endif %}
+
+        {% if page.author %}
+        {{ posts::meta(page=page, author=page.author) }}
+        {% else %}
+        {{ posts::meta(page=page, author=config.extra.author) }}
+        {% endif %}
+      </div><!--./content-title-->
+
+      <div class="e-content">
+        {{ page.content | safe }}
+      </div>
+
+      {# TODO comments #}
+    </div><!--content-item-->
+
+    {{ pagination_page::paginate() }}
+    {%- endblock item -%}
+  </section>
+</section>
+{%- endblock main -%}

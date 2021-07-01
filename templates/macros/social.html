@@ -1,0 +1,64 @@
+{% macro og_preview() %}
+    <meta property="og:title" content="{{ social::og_title() | trim }}" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{ current_url }}"/>
+    <meta property="og:description" content="{{ head::description() }}"/>
+    <meta property="og:image" content="{{ social::og_image() |trim }}"/>
+{% endmacro og_preview %}
+
+{% macro twitter_preview() %}
+    {%- if page -%}
+    {% if page.extra.cover_image %}
+    <meta name="twitter:card" content="summary_large_image">
+    {% else %}
+    <meta name="twitter:card" content="summary">
+    {%- endif -%}
+    {% else %}
+    <meta name="twitter:card" content="summary">
+    {%- endif -%}
+
+    {% if config.extra.twitter_site -%}
+    <meta name="twitter:site" content="{{ config.extra.twitter_user }}">
+    {%- endif -%}
+
+    {% if page %}
+    {%- if page.extra.twitter_user -%}
+    <meta name="twitter:creator" content="{{ page.extra.twitter_user }}">
+    {%- endif -%}
+    {%- endif %}
+    {%- if config.extra.twitter_user %}
+    <meta name="twitter:creator" content="{{ config.extra.twitter_user }}">
+    {%- endif %}
+    <meta name="twitter:image:alt" content="{{ social::og_image() | trim }}">
+{% endmacro twitter_preview %}
+
+{% macro og_image() %}
+  {%- if section -%}
+    {%- if config.extra.og_preview_img -%}
+      {{ get_url(path=config.extra.og_preview_img) }}
+    {%- endif -%}
+  {%- elif page -%}
+    {%- if page.extra.og_image -%}
+      {{ get_url(path=page.extra.og_image) }}
+    {%- elif page.extra.cover_image -%}
+      {{ get_url(path=page.extra.cover_image) }}
+    {%- endif -%}
+  {%- endif -%}
+{% endmacro og_image %}
+
+{% macro og_title() %}
+    {{ config.title }} -&nbsp;
+    {%- if section -%}
+        {%- if section.title -%}
+            {{ section.title | striptags }}
+        {%- else -%}
+            {{ config.description }}
+        {%- endif -%}
+    {%- elif page -%}
+        {%- if page.title -%}
+            {{ page.title | striptags }}
+        {%- else -%}
+            {{ config.description }}
+        {%- endif -%}
+    {%- endif -%}
+{% endmacro og_title %}
