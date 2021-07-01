@@ -1,7 +1,6 @@
 {% macro section_meta(section, author) %}
     <div class="post-meta">
         <span class="post-date">
-
             {%- if section.extra["date"] -%}
                 {{ section.extra["date"] | date(format="%Y.%m.%d") }}
                 {# end of section.date if-check #}
@@ -121,7 +120,7 @@
 {% endif %}
 {% endmacro cover %}
 
-{% macro card(page) %}
+{% macro card(page, full) %}
 <div class="card">
     {% if page.extra.cover_image %}
     {% if page.extra.cover_image is matching("[.](jpg|jpeg|png|gif)$") %}
@@ -160,6 +159,9 @@
     </div><!--./card-header-->
 
     <div class="card-body">
+      {% if full %}
+      {{ page.content | safe }}
+      {% else %}
       {% set show_read_more_btn = true %}
 
       {%  if page.description -%}
@@ -178,6 +180,7 @@
       <div>
         <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_post }} →</a>
       </div>
+      {% endif -%}
       {% endif -%}
     </div><!--./card-body-->
 

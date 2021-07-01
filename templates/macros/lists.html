@@ -1,7 +1,7 @@
 {% macro list_pages() %}
 <div class="posts">
-    {%- for page in paginator.pages -%}
-    {{ posts::card(page=page) }}
-    {%- endfor -%}
+  {%- for page in paginator.pages -%}
+  {{ posts::card(page=page, full=false) }}
+  {%- endfor -%}
 </div>
 {% endmacro list_pages %}
