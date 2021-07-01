@@ -10,7 +10,7 @@
 {% import "macros/sidebar.html" as sidebar -%}
 {% import "macros/theme_switcher.html" as theme_switcher -%}
 {% import "macros/footer.html" as footer -%}
-{# import "macros/pagination.html" as pagination -#}
+{%- import "macros/pagination.html" as pagination -%}
 {# import "macros/extended_footer.html" as extended_footer -#}
 
 <!DOCTYPE html>
@@ -65,39 +65,39 @@
 
       <section id="start">
         {%-  block main -%}
-        <section id="body-wrapper" class="section blog-listing">
+        <section id="body-wrapper" class="section">
           <section class="container {{ grid_size }}">
             {%- if config.extra.sidebar.active -%}
-            {%- block content -%}
             <div class="columns">
-              <div id="item" class="column col-9 col-md-12 extra-spacing">
-                {{ lists::list_pages() }}
+              <div id="item" class="column col-9 col-md-12 extra-spacing blog-listing">
+                {%- block content -%}
+                  {{ lists::list_pages() }}
+                {%- endblock content -%}
               </div>
               <div id="sidebar" class="column col-3 col-md-12">
                 <div class="sidebar-content">
                   {% if config.extra.sidebar.text_snippet -%}
-                  {{ sidebar::text_snippet(content=config.extra.sidebar.text_snippet) }}
+                    {{ sidebar::text_snippet(content=config.extra.sidebar.text_snippet) }}
                   {% endif -%}
                   {% if config.extra.sidebar.tweets_by -%}
-                  {{ sidebar::tweets_by(id=config.extra.sidebar.tweets_by) }}
+                    {{ sidebar::tweets_by(id=config.extra.sidebar.tweets_by) }}
                   {% endif -%}
                   {% if config.extra.sidebar.popular_tags -%}
-                  {{ sidebar::popular_tags() }}
+                    {{ sidebar::popular_tags() }}
                   {% endif -%}
                   {% if config.extra.sidebar.archives -%}
-                  {{ sidebar::archives() }}
+                    {{ sidebar::archives() }}
                   {% endif -%}
                   {% if config.extra.sidebar.syndicate -%}
-                  {{ sidebar::syndicate() }}
+                    {{ sidebar::syndicate() }}
                   {% endif -%}
                 </div><!--./sidebar-content-->
               </div>
             </div>
-            {%- endblock content -%}
             {% else %}
-            <div id="item">
+            <div id="item" class="blog-listing">
             {%- block content -%}
-            {{ lists::list_pages() }}
+              {{ lists::list_pages() }}
             {%- endblock content -%}
             </div>
             {%- endif -%}{# sidebar active? #}
@@ -105,11 +105,11 @@
         </section>
         {%- endblock main -%}
       </section>
-    </div><!-- ./page-wrapper -->
 
-    {%- block pagination -%}
-      {# pagination::paginate() #}
-    {%- endblock pagination -%}
+      {%- block postcontent -%}
+      {{ pagination::paginate(grid_size=grid_size) }}
+      {%- endblock postcontent -%}
+    </div><!-- ./page-wrapper -->
 
     {%- block footer -%}
       {{ footer::footer(grid_size=grid_size) }}

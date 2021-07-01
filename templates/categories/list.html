@@ -1,17 +1,17 @@
 {% extends "index.html" %}
 {%- block content -%}
 <div class="container {{ grid_size }}">
-    <h1 class="post-title">{categories}</h1>
+    <div class="content-title text-center">
+    <h1 class="post-title">Categories</h1>
+    </div>
+
     <ul>
-        {%- for cat in terms -%}
-            <li class="tag-list">
-                <a href="{{ get_taxonomy_url(kind="categories", name=cat.name) }}">{{ "{" }}{{ cat.name }}{{ "}" }}</a>
-                ({{ cat.pages | length }} post{{ cat.pages | length | pluralize }})
-            </li>
-            {# End of pagination for-loop #}
-        {%- endfor -%}
-        {#- I don't put pagination here like Terminal does. I don't like how
-        the buttons move with the size of post entries in the content div. -#}
+      {%- for cat in terms -%}
+          <li class="tag-list">
+              <a href="{{ get_taxonomy_url(kind="categories", name=cat.name) }}">{{ cat.name }}</a>
+              ({{ cat.pages | length }} post{{ cat.pages | length | pluralize }})
+          </li>
+      {%- endfor -%}
     </ul>
 </div>
 {%- endblock content -%}
