@@ -68,11 +68,10 @@
         <section id="body-wrapper" class="section blog-listing">
           <section class="container {{ grid_size }}">
             {%- if config.extra.sidebar.active -%}
+            {%- block content -%}
             <div class="columns">
               <div id="item" class="column col-9 col-md-12 extra-spacing">
-                {%- block content -%}
                 {{ lists::list_pages() }}
-                {%- endblock content -%}
               </div>
               <div id="sidebar" class="column col-3 col-md-12">
                 <div class="sidebar-content">
@@ -94,9 +93,12 @@
                 </div><!--./sidebar-content-->
               </div>
             </div>
+            {%- endblock content -%}
             {% else %}
             <div id="item">
-              {{ lists::list_pages() }}
+            {%- block content -%}
+            {{ lists::list_pages() }}
+            {%- endblock content -%}
             </div>
             {%- endif -%}{# sidebar active? #}
           </section>
