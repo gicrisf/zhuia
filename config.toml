@@ -1,6 +1,9 @@
 # The URL the site will be built for
 base_url = "/"
 
+title = "Zhuia"
+description = "Another Zola theme, this time written with Spectre."
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -19,6 +22,9 @@ taxonomies = [
 highlight_code = false
 
 [extra]
+# Logo
+logo_image = "/assets/images/zhuia-soft.png"
+
 # The max-width of the page content
 grid_size = "grid-md"
 
@@ -40,7 +46,7 @@ read_more = "read more"
 
 [extra.sidebar]
 # Enable/Disable sidebar
-active=false
+active=true
 
 # Include a text snippet
 # text_snippet="Some text here"

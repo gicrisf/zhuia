@@ -1,0 +1,19 @@
+:root {
+  --accent: rgb(255,168,106);
+  --accent-alpha-10: rgba(255, 168, 106, .1);
+  --accent-alpha-20: rgba(255, 168, 106, .2);
+  --accent-alpha-70: rgba(255, 168, 106,.7);
+  --background: #211f1a;
+  --color: whitesmoke;
+  --border-color: rgba(255, 255, 255, .1);
+}
+
+[data-theme="light"] {
+  --accent: rgb(196, 125, 76);
+  --accent-alpha-10: rgba(196, 125, 76, .1);
+  --accent-alpha-20: rgba(196, 125, 76, .2);
+  --accent-alpha-70: rgba(196, 125, 76, .7);
+  --background: #e4e3dd;
+  --color: #110b11;
+  --border-color: rgba(255, 255, 255, .1);
+}

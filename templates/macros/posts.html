@@ -16,24 +16,25 @@
 {% endmacro section_meta %}
 
 {% macro meta(page, author) %}
-    <div class="post-meta">
-        <span class="post-date">
-            {%- if page.date -%}
-                {{ page.date | date(format="%Y.%m.%d") }}
-                {# end of page.date if-check #}
-            {%- endif -%}
-
-            {%- if page.updated -%}
-                [Updated: {{ page.updated | date(format="%Y.%m.%d") }}]
-                {# end of page.updated if-check #}
-            {%- endif -%}
+    <div class="post-meta" style="display: inline-flex">
+        <span class="blog-date" style="display: inline-flex;">
+          <i class="gg-calendar" style="margin-right: 5px;"></i>
+          {%- if page.updated -%}
+          <time datetime="{{ page.updated | date(format="%Y.%m.%d") }}">
+          [Updated: {{ page.updated | date(format="%Y.%m.%d") }}]
+          </time>
+          {%- else -%}
+          <time datetime="{{ page.date | date(format="%Y.%m.%d") }}">
+          {{ page.date | date(format="%Y.%m.%d") }}
+          </time>
+          {%- endif -%}
         </span>
 
-        <span class="post-author">
-            {%- if author -%}
-                {{ utils::author(page=page) }}
-            {%- endif -%}
+        {%- if author -%}
+        <span class="post-author" style="margin-left: 5px; font-size: 13px; display: inline-flex;">
+          - {{ utils::author(page=page) }}
         </span>
+        {%- endif -%}
     </div>
 {% endmacro meta %}
 
@@ -128,7 +129,7 @@
     {% set imgpath = parent_dir_rel_path ~ "/" ~ page.extra.cover_image %}
 
     <div class="card-image">
-      <a href="{{ page.permalink }}">
+      <a href="{%- if full -%}{{ page.permalink }}{{ page.extra.cover_image }}{%- else -%}{{ page.permalink }}{% endif %}">
       <img
       alt="{{ page.title | striptags }}"
       class="post-cover
@@ -148,13 +149,20 @@
     {% endif %}{# cover_image #}
 
     <div class="card-header">
+      {%- if not full -%}
       <div class="card-subtitle text-gray">
         {{ posts::meta(page=page, author=config.extra.show_author) }}
       </div>
-      <div class="card-title">
-        <h5 class="post-title">
-          <a href="{{ page.permalink }}">{{ page.title }}</a>
-        </h5>
+      {%- endif -%}
+      <div class="card-title" style="margin-top: .25rem;">
+        {%- if full -%}
+        <div class="text-center">
+          <h1 class="post-title">{{ page.title }}</h1>
+          {{ posts::meta(page=page, author=config.extra.show_author) }}
+        </div>
+        {%- else -%}
+        <h5 class="post-title"><a href="{{ page.permalink }}">{{ page.title }}</a></h5>
+        {%- endif -%}
       </div>
     </div><!--./card-header-->
 
@@ -181,7 +189,7 @@
         <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_post }} →</a>
       </div>
       {% endif -%}
-      {% endif -%}
+      {% endif -%}{# endif full #}
     </div><!--./card-body-->
 
     <div class="card-footer">

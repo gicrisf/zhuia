@@ -3,8 +3,8 @@
 {% endmacro text_snippet %}
 
 {% macro tweets_by(id) %}
-<div class="tweets-by-wrapper">
-<a class="twitter-timeline" href="https://twitter.com/{{ id }}?ref_src=twsrc%5Etfw">Tweets by {{ id }}</a>
+<div class="tweets-by-wrapper" style="height: 600px;">
+<a class="twitter-timeline" data-height="600" href="https://twitter.com/{{ id }}?ref_src=twsrc%5Etfw">Tweets by {{ id }}</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 {% endmacro tweets_by %}
