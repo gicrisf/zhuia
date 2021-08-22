@@ -1,6 +1,10 @@
 {% import "macros/pagination_page.html" as pagination_page -%}
 {% extends "index.html" -%}
 
+{%- block breadcrumbs -%}
+{{ breadcrumbs::breadcrumbs(page=page) }}
+{%- endblock breadcrumbs -%}
+
 {%- block content -%}
 {{ posts::card(page=page, full=true) }}
 {%- endblock content -%}

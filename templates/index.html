@@ -7,6 +7,7 @@
 {% import "macros/social.html" as social -%}
 {% import "macros/utils.html" as utils -%}
 {% import "macros/menu.html" as menu -%}
+{% import "macros/breadcrumbs.html" as breadcrumbs -%}
 {% import "macros/frontmatter.html" as frontmatter -%}
 {% import "macros/sidebar.html" as sidebar -%}
 {% import "macros/theme_switcher.html" as theme_switcher -%}
@@ -69,6 +70,10 @@
         <section id="body-wrapper" class="section">
           <section class="container {{ grid_size }}">
             {{ frontmatter::frontmatter() }}
+
+            {%- block breadcrumbs -%}
+            {%- endblock breadcrumbs -%}
+
             {%- if config.extra.sidebar.active -%}
             <div class="columns">
               <div id="item" class="column col-9 col-md-12 extra-spacing blog-listing">
