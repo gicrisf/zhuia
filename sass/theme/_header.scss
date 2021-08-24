@@ -6,7 +6,7 @@
   font-size: 0.7rem;
   font-weight: 700;
 
-  background: $light-color;
+  background: white;
   color: $dark-color;
 
   a {
@@ -59,7 +59,7 @@
 
   .logo {
     svg, img {
-      height: 42px;
+      height: 100px;
       display: inherit;
     }
   }
