@@ -117,10 +117,14 @@ ul.pagination {
   }
 }
 
-.sidebar-content {
-    border-radius: 1rem;
-    padding: 1rem;
-    background: var(--color-background-twitter-widget);
+.sidebar-widget {
+  border-radius: 1rem;
+  padding: 1rem;
+  background: var(--color-background-lighter);
+}
+
+.sidebar-twitter-widget {
+  background: var(--color-background-twitter-widget);
 }
 
 /** Cards **/

@@ -23,7 +23,7 @@ highlight_code = false
 
 [extra]
 # Logo
-logo_image = "/assets/images/zhuia-soft.png"
+logo_image = "/assets/images/zhuia-logo-compact.svg"
 
 # The max-width of the page content
 grid_size = "grid-lg"

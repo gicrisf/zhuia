@@ -91,3 +91,7 @@ body.header-fixed.header-animated {
 .login-status-wrapper {
   white-space: nowrap;
 }
+
+.retroillumination {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255,255,255,0) 65%);
+}

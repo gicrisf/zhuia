@@ -1,12 +1,16 @@
 {% macro text_snippet(content) %}
+<div class="sidebar-widget">
   {{ content | safe }}
+</div><!-- end text widget -->
 {% endmacro text_snippet %}
 
 {% macro tweets_by(id) %}
+<div class="sidebar-widget sidebar-twitter-widget">
 <div class="tweets-by-wrapper" style="height: 600px;">
 <a class="twitter-timeline" data-height="600" href="https://twitter.com/{{ id }}?ref_src=twsrc%5Etfw">Tweets by {{ id }}</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
+</div><!-- end twitter widget -->
 {% endmacro tweets_by %}
 
 {% macro popular_tags() %}

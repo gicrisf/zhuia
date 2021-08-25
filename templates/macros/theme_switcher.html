@@ -20,7 +20,10 @@ if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
 
     if (currentTheme === 'light') {
+        icon.setAttribute('class', 'gg-sun');
         toggleSwitch.checked = true;
+    } else {
+        icon.setAttribute('class', 'gg-moon');
     }
 }
 
