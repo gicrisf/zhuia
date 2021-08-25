@@ -2,7 +2,7 @@
 .btn {
   appearance: none;
   background: var(--background-lighter);
-  border: $border-width solid var(--color-primary);
+  border: $border-width solid $primary-color;
   border-radius: $border-radius;
   color: var(--color-primary);
   cursor: pointer;
@@ -23,7 +23,7 @@
   }
   &:focus,
   &:hover {
-    background: var(--color-secondary);
+    background: $secondary-color;
     border-color: var(--color-primary-darken-3);
     text-decoration: none;
   }
@@ -52,23 +52,23 @@
   &.btn-primary {
     background: var(--color-primary);
     border-color: var(--color-primary-darken-3);
-    color: var(--background-lighter);
+    color: $light-color;
     &:focus,
     &:hover {
-      background: var(--primary-color-darken-5);
-      border-color: var(--primary-color-darken-8);
-      color: var(--background-lighter);
+      background: darken($primary-color-dark, 2%);
+      border-color: darken($primary-color-dark, 5%);
+      color: $light-color;
     }
     &:active,
     &.active {
-      background: var(--primary-color-darken-7);
-      border-color: var(--primary-color-darken-10);
-      color: var(--background-lighter);
+      background: darken($primary-color-dark, 4%);
+      border-color: darken($primary-color-dark, 7%);
+      color: $light-color;
     }
     &.loading {
       &::after {
-        border-bottom-color: var(--background-lighter);
-        border-left-color: var(--background-lighter);
+        border-bottom-color: $light-color;
+        border-left-color: $light-color;
       }
     }
   }
@@ -86,12 +86,12 @@
   &.btn-link {
     background: transparent;
     border-color: transparent;
-    color: var(--primary-color);
+    color: $link-color;
     &:focus,
     &:hover,
     &:active,
     &.active {
-      color: var(--primary-color-darken-3);
+      color: $link-color-dark;
     }
   }
 
@@ -145,7 +145,7 @@
 
     &:focus,
     &:hover {
-      background: var(--background-alpha-50);
+      background: rgba($bg-color, .5);
       opacity: .95;
     }
 

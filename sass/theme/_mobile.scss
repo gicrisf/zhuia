@@ -15,7 +15,7 @@
     margin-left: 1.4rem;
 
     path {
-      fill: var(--color-lighter);
+      fill: $light-color;
     }
 
   }
@@ -58,21 +58,21 @@
 
       .top {
         transform: translateY($bar-offset) translateX(0) rotate(45deg);
-        background: var(--color-mobile-active);
+        background: $mobile-color-active;
       }
       .middle {
         opacity: 0;
-        background: var(--color-mobile-active);
+        background: $mobile-color-active;
       }
 
       .bottom {
         transform: translateY(-($bar-offset)) translateX(0) rotate(-45deg);
-        background: var(--color-mobile-active);
+        background: $mobile-color-active;
       }
     }
 
     span {
-      background: var(--color-mobile-main);
+      background: $mobile-color-main;
       border: none;
       height: 4px;
       width: 100%;
@@ -140,7 +140,7 @@
     padding: 5px 0;
     line-height: 1.2rem;
 
-    background: var(--color-gray-dark-alpha-10);
+    background: rgba($gray-color-dark,0.1);
 
     a {
       display: block;
@@ -148,7 +148,7 @@
       font-size: 1rem;
 
       &:hover, &:focus, &.active {
-        color: var(--color-primary) !important;
+        color: $primary-color-light !important;
         text-decoration: none;
       }
     }

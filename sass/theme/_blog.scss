@@ -120,11 +120,11 @@ ul.pagination {
 .sidebar-widget {
   border-radius: 1rem;
   padding: 1rem;
-  background: var(--color-background-lighter);
+  background: $bg-color-light;
 }
 
 .sidebar-twitter-widget {
-  background: var(--color-background-twitter-widget);
+  background: $bg-color-light;
 }
 
 /** Cards **/

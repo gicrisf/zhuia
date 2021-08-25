@@ -41,12 +41,12 @@ section.section {
   background-position: center;
 
   h1 {
-    color: var(--color-header);
+    color: $header-text-dark;
     font-size: 4rem;
   }
 
   h2 {
-    color: var(--color-header-alpha-80);
+    color: rgba($header-text-dark, 0.8);
     font-size: 2.5rem;
   }
 
@@ -99,10 +99,10 @@ section.section {
 
   &.text-light {
     h1 {
-      color: var(--color-header-light);
+      color: $header-text-light;
     }
     h2 {
-      color: var(--color-header-light-alpha-80);
+      color: rgba($header-text-light, 0.8);
     }
   }
 
