@@ -1,8 +1,42 @@
-{% macro switch() %}
-<div class="theme-switch">
-  <div class="switch">
-
-  </div>
-  <p style="float: left;">Light Theme</p>
+{% macro button() %}
+<!-- form switch control -->
+<div class="form-group">
+  <label class="theme-switch form-switch" for="theme-mode-checkbox">
+    <input type="checkbox" id="theme-mode-checkbox">
+    <i class="form-icon"></i>
+    <i class="gg-sun" id="theme-switch-icon"></i>
+  </label>
 </div>
-{% endmacro switch %}
+{% endmacro button %}
+
+{% macro script() %}
+<script type="text/javascript">
+// Theme switcher
+var toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+var currentTheme = localStorage.getItem('theme');
+var icon = document.querySelector('#theme-switch-icon');
+  
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'light') {
+        toggleSwitch.checked = true;
+    }
+}
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        icon.setAttribute('class', 'gg-sun');
+        localStorage.setItem('theme', 'light');
+    }
+    else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      icon.setAttribute('class', 'gg-moon');
+      localStorage.setItem('theme', 'dark');
+    }
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+</script>
+{% endmacro script %}

@@ -6,9 +6,14 @@
         <p><a href="https://github.com/mr-chrome/zhuia">Zhuia</a> by <a href="https://github.com/mr-chrome">mr-chrome</a> | built on Zola</p>
       </div>
       <div class="column col-3 col-sm-12">
-        {{ theme_switcher::switch() }}
+        {# theme_switcher::switch() #}
+        {# Social media here #}
       </div>
     </div>
   </section>
 </section>
+
+{% if config.extra.darkmode_switch %}
+{{ theme_switcher::script() }}
+{% endif %}
 {% endmacro footer %}

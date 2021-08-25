@@ -6,31 +6,26 @@
   font-size: 0.7rem;
   font-weight: 700;
 
-  background: white;
-  color: $dark-color;
-
-  a {
-    color: $dark-color;
-  }
+  background: var(--color-background-lighter);
 
   .logo svg path {
-    fill: $header-color-dark;
+    fill: var(--color-header);
   }
 
   .header-dark &:not(.scrolled) {
-    background: $header-color-dark;
-    color: $light-color;
+    background: var(--color-header);
+    color: var(--color-lighter);
     a {
-      color: rgba($light-color, 0.7) !important;
+      color: var(--color-lighter-alpha-70) !important;
     }
     a.active {
-      color: $light-color !important;
+      color: var(--color-lighter) !important;
     }
     .dropmenu ul ul a {
-        color: $dark-color !important;
+        color: var(--color-darker) !important;
     }
     .logo svg path {
-      fill: $light-color;
+      fill: var(--color-lighter);
     }
   }
 

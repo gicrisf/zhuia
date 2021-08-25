@@ -15,7 +15,7 @@
     margin-left: 1.4rem;
 
     path {
-      fill: $light-color;
+      fill: var(--color-lighter);
     }
 
   }
@@ -58,21 +58,21 @@
 
       .top {
         transform: translateY($bar-offset) translateX(0) rotate(45deg);
-        background: $mobile-color-active;
+        background: var(--color-mobile-active);
       }
       .middle {
         opacity: 0;
-        background: $mobile-color-active;
+        background: var(--color-mobile-active);
       }
 
       .bottom {
         transform: translateY(-($bar-offset)) translateX(0) rotate(-45deg);
-        background: $mobile-color-active;
+        background: var(--color-mobile-active);
       }
     }
 
     span {
-      background: $mobile-color-main;
+      background: var(--color-mobile-main);
       border: none;
       height: 4px;
       width: 100%;
@@ -140,7 +140,7 @@
     padding: 5px 0;
     line-height: 1.2rem;
 
-    background: rgba($gray-color-dark,0.1);
+    background: var(--color-gray-dark-alpha-10);
 
     a {
       display: block;
@@ -148,7 +148,7 @@
       font-size: 1rem;
 
       &:hover, &:focus, &.active {
-        color: $primary-color-light !important;
+        color: var(--color-primary) !important;
         text-decoration: none;
       }
     }

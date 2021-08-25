@@ -44,6 +44,9 @@ show_tags = true
 show_categories = true
 read_more = "read more"
 
+# Dark mode enabler
+darkmode_switch = true
+
 [extra.sidebar]
 # Enable/Disable sidebar
 active=true

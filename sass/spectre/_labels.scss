@@ -13,22 +13,22 @@
 
   // Label colors
   &.label-primary {
-    @include label-variant($light-color, $primary-color);
+    @include label-variant(var(--background), var(--color-primary));
   }
 
   &.label-secondary {
-    @include label-variant($primary-color, $secondary-color);
+    @include label-variant(var(--color-primary), var(--color-secondary));
   }
 
   &.label-success {
-    @include label-variant($light-color, $success-color);
+    @include label-variant(var(--background), var(--color-success));
   }
 
   &.label-warning {
-    @include label-variant($light-color, $warning-color);
+    @include label-variant(var(--backround), var(--color-warning));
   }
 
   &.label-error {
-    @include label-variant($light-color, $error-color);
+    @include label-variant(var(--background), var(--color-error));
   }
 }
