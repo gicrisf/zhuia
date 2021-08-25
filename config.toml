@@ -44,9 +44,6 @@ show_tags = true
 show_categories = true
 read_more = "read more"
 
-# Dark mode enabler
-darkmode_switch = true
-
 [extra.sidebar]
 # Enable/Disable sidebar
 active=true
@@ -63,3 +60,5 @@ tweets_by="cromo___"
 popular_tags=false
 archive=false
 syndicate=false
+author_card=false # TODO
+related_posts=false #TODO

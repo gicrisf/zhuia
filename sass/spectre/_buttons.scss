@@ -1,10 +1,10 @@
 // Buttons
 .btn {
   appearance: none;
-  background: var(--background-lighter);
+  background: $bg-color-light;
   border: $border-width solid $primary-color;
   border-radius: $border-radius;
-  color: var(--color-primary);
+  color: $primary-color;
   cursor: pointer;
   display: inline-block;
   font-size: $font-size;
@@ -24,19 +24,19 @@
   &:focus,
   &:hover {
     background: $secondary-color;
-    border-color: var(--color-primary-darken-3);
+    border-color: $primary-color-dark;
     text-decoration: none;
   }
   &:active,
   &.active {
-    background: var(--color-primary-darken-3);
-    border-color: var(--color-primary-darken-8);
-    color: var(--background-lighter);
+    background: $primary-color-dark;
+    border-color: darken($primary-color-dark, 5%);
+    color: $light-color;
     text-decoration: none;
     &.loading {
       &::after {
-        border-bottom-color: var(--background-lighter);
-        border-left-color: var(--background-lighter);
+        border-bottom-color: $light-color;
+        border-left-color: $light-color;
       }
     }
   }
@@ -50,8 +50,8 @@
 
   // Button Primary
   &.btn-primary {
-    background: var(--color-primary);
-    border-color: var(--color-primary-darken-3);
+    background: $primary-color;
+    border-color: $primary-color-dark;
     color: $light-color;
     &:focus,
     &:hover {

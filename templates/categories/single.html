@@ -1,18 +1,21 @@
 {%- extends "index.html"-%}
 {%- block content -%}
 <div class="container {{ grid_size }}">
-    <h1 class="post-title">
-        categories ∋ {{ "{" }}{{ term.name }}{{ "}" }}
-        ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
-    </h1>
+    <h1 class="post-title"> Category: {{ term.name }} ({{ term.pages | length }} post)</h1>
 
     <ul>
         {%- for post in term.pages -%}
-            <li class="tag-list">
-                {{ post.date | date(format="%Y.%m.%d") }}
-                :: <a href="{{ post.permalink }}">{{ post.title }}</a>
-                :: {{ "{" }}
-                {%- for cat in post.taxonomies["categories"] -%}
+<li class="tile tile-centered">
+  <div class="tile-icon">
+    <div class="example-tile-icon">
+      <i class="icon icon-file centered"></i>
+    </div>
+  </div>
+  <div class="tile-content">
+    <p class="tile-title">{{ post.title }}</p>
+    <p class="tile-subtitle">{{ post.date | date(format="%Y.%m.%d") }}</p>
+
+    <p>{%- for cat in post.taxonomies["categories"] -%}
                     {%- if loop.last -%}
                         <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>
                     {%- elif loop.first -%}
@@ -20,12 +23,14 @@
                     {%- else -%}
                         <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,
                         {%- endif -%}
-                {% endfor %}{{ "}" }}
-            </li>
-            {# End of pagination for-loop #}
+                {% endfor %}
+</p>
+  </div>
+  <div class="tile-action">
+    <button class="btn">Read</button>
+  </div>
+</li>
         {%- endfor -%}
-        {#- I don't put pagination here like Terminal does. I don't like how
-        the buttons move with the size of post entries in the content div. -#}
   </ul>
 </div>
 {%- endblock content -%}
