@@ -1,5 +1,5 @@
 {%- macro logo() -%}
-<a href="{%- if config.extra.logo_home_link -%}{{ config.extra.logo_home_link }}{%- else -%}{{ config.base_url }}{%- endif -%}">
+<!--a href="{%- if config.extra.logo_home_link -%}{{ config.extra.logo_home_link }}{%- else -%}{{ config.base_url }}{%- endif -%}"-->
   <div class="logo">
     {% if config.extra.logo_image %}
       <div class="col-mx-auto" style="max-width: 280px">
@@ -11,5 +11,5 @@
       {{ config.title | default(value="zhuia") }}
     {% endif %}
   </div>
-</a>
+<!--/a-->
 {%- endmacro logo -%}

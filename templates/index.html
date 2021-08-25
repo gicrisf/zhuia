@@ -8,6 +8,7 @@
 {% import "macros/utils.html" as utils -%}
 {% import "macros/menu.html" as menu -%}
 {% import "macros/breadcrumbs.html" as breadcrumbs -%}
+{% import "macros/social_buttons.html" as social_buttons -%}
 {% import "macros/frontmatter.html" as frontmatter -%}
 {% import "macros/sidebar.html" as sidebar -%}
 {% import "macros/theme_switcher.html" as theme_switcher -%}
@@ -63,15 +64,14 @@
     <div id="page-wrapper">
       {%- block header -%}
           {{ header::header(grid_size=grid_size) }}
+
+          {{ frontmatter::frontmatter() }}
       {%- endblock header -%}
 
       <section id="start">
         {%-  block main -%}
         <section id="body-wrapper" class="section">
           <section class="container {{ grid_size }}">
-            <!-- TODO Erase frontmatter -->
-            {# frontmatter::frontmatter() #}
-
             {%- block breadcrumbs -%}
             {%- endblock breadcrumbs -%}
 
@@ -96,7 +96,7 @@
                   {% if config.extra.sidebar.archives -%}
                     {{ sidebar::archives() }}
                   {% endif -%}
-                  {% if config.extra.sidebar.syndicate -%}
+                  {% if config.generate_feed -%}
                     {{ sidebar::syndicate() }}
                   {% endif -%}
                 </div><!--./sidebar-content-->

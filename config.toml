@@ -4,6 +4,10 @@ base_url = "/"
 title = "Zhuia"
 description = "Another Zola theme, this time written with Spectre."
 
+# Whether to generate a RSS feed automatically
+generate_feed = true
+feed_filename = "rss.xml"
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -38,6 +42,14 @@ main_menu = [
               {url="/categories/", name="categories"},
 ]
 
+# Social media buttons to display. You define a url and the name of the platform.
+# The name must be coincident with the icon-pack one.
+telegram_link = "https://t.me/zwitterio"
+facebook_link = ""
+twitter_link = "https://twitter.com/cromo___"
+instagram_link = "https://instagram.com/cromo._"
+github_link = "https://github.com/mr-chrome"
+
 # Post metadata
 show_author = true
 show_tags = true
@@ -49,7 +61,7 @@ read_more = "read more"
 active=true
 
 # Include a text snippet
-# text_snippet="Some text here"
+text_snippet="Some text here"
 
 # Include search bar
 # TODO template
