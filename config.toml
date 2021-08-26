@@ -12,7 +12,7 @@ feed_filename = "rss.xml"
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
+build_search_index = true
 
 # Built in taxonomies of huia.
 taxonomies = [

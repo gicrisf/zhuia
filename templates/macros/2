@@ -1,0 +1,82 @@
+{% macro form() %}
+<div class="input-group input-inline search">
+  <input id="search" class="form-input input-sm" type="text">
+  <button class="btn btn-primary btn-sm input-group-btn">
+    <span>Search</span>
+  </button>
+</div>
+{% endmacro form %}
+
+{% macro popover() %}
+<div class="header__search">
+  <div class="search-container search-popover d-invisible">
+    {% if config.build_search_index %}
+    {{ search::results() }}
+    {% elif config.extra.ddg_search %}
+    {% endif %}
+  </div>
+</div>
+{% endmacro popover %}
+
+{% macro results() %}
+<div class="search-results__not-found" style="text-align: center">
+  <div>
+    {%- if config.extra.not_found_message -%}
+    {{ config.extra.search_not_found_message }}
+    {%- else -%}
+    0 results with this keywords.
+    {%- endif -%}
+  </div>
+</div>
+<div class="search-results">
+  <div class="search-results__items"></div>
+</div>
+<p></p>
+{% endmacro results %}
+
+{% macro script() %}
+<script type="text/javascript">
+!function () {
+  function t() {
+    search_popover && search_popover.classList.toggle('d-invisible'),
+    c && c.classList.toggle('d-invisible'),
+    search_bar && search_bar.classList.toggle('open'),
+    search_box.focus();
+  }
+  var n = document.querySelector('.container'),
+  search_popover = document.querySelector('.search-popover'),
+  search_bar = document.querySelector('.search'),
+  // search_box = document.querySelector('.search-box'),
+  // search_button = document.querySelector('.search-button'),
+  c = document.querySelector('.menu__sub-inner-more');
+
+  search_popover && search_popover.addEventListener('click', function (e) {
+    return e.stopPropagation()
+  }),
+  document.body.addEventListener('click', function () {
+    !c || c.classList.contains('d-invisible') ? !search_popover.classList.contains('d-invisible') && search_popover.classList.add('d-invisible') : c.classList.add('d-invisible'), search_bar.classList.remove('open')
+  }),
+  search_bar && search_bar.addEventListener('click', function (e) {
+    return e.stopPropagation()
+  }),
+  search_button && search_button.addEventListener('click', function (e) {
+    e.stopPropagation(),
+    t()
+  })
+}();
+</script>
+
+{% if config.build_search_index %}
+<script src="{{ get_url(path='assets/js/search.js', trailing_slash=false) | safe }}"></script>
+<script defer src="{{ get_url(path='elasticlunr.min.js', trailing_slash=false) | safe }}"></script>
+{%- if config.default_language and config.default_language != "en" -%}
+{%- set search_index_file = "search_index." ~ config.default_language ~ ".js" %}
+{%- set lunr_lang_file = "assets/js/lunr-languages/lunr." ~ config.default_language ~ ".min.js" -%}
+<script defer src="{{ get_url(path='assets/js/lunr-languages/lunr.stemmer.support.min.js', trailing_slash=false) | safe }}"></script>
+<script defer src="{{ get_url(path=lunr_lang_file, trailing_slash=false) | safe }}"></script>
+<script defer src="{{ get_url(path=search_index_file, trailing_slash=false) | safe }}"></script>
+{%- else -%}
+<script defer src="{{ get_url(path='search_index.en.js', trailing_slash=false) | safe }}"></script>
+{%- endif -%}
+{% endif %}
+{% endmacro script %}

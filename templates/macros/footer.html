@@ -16,4 +16,9 @@
 {% if config.extra.darkmode_switch %}
 {{ theme_switcher::script() }}
 {% endif %}
+
+{% if config.build_search_index %}
+{{ search::script() }}
+{% endif %}
+
 {% endmacro footer %}
