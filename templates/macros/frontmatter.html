@@ -1,11 +1,12 @@
 {% macro frontmatter(grid_size) %}
 <div class="text-center container {{ grid_size }}">
-
   {{ logo::logo() }}
 
   <h1>{{ config.title }}</h1>
   <p class="tile-subtitle">{{ config.description }}</p>
 </div>
 
-{{ social_buttons::social_buttons() }}
+<div class="hide-sm">
+  {{ social_buttons::social_buttons() }}
+</div>
 {% endmacro frontmatter %}
