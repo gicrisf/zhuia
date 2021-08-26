@@ -1,18 +1,17 @@
-{% macro form() %}
-<div class="input-group input-inline search">
-  <input id="search" class="form-input input-sm" type="text">
-  <button class="btn btn-primary btn-sm input-group-btn search-button">
+{% macro form(class, id, button) %}
+<div class="input-group input-inline {{ class }}">
+  <input id="{{ id }}" class="form-input input-sm" type="text">
+  <button class="btn btn-primary btn-sm input-group-btn {{ button }}">
     <span>Search</span>
   </button>
 </div>
 {% endmacro form %}
 
-{% macro popover() %}
+{% macro popover(class) %}
 <div class="header__search">
-  <div class="search-container search-popover d-invisible">
+  <div class="search-container {{ class }} d-invisible">
     {% if config.build_search_index %}
     {{ search::results() }}
-    {% elif config.extra.ddg_search %}
     {% endif %}
   </div>
 </div>
@@ -34,20 +33,20 @@
 <p></p>
 {% endmacro results %}
 
-{% macro script() %}
+{% macro script(popover, bar, button) %}
 <script type="text/javascript">
 !function () {
   function t() {
     search_popover && search_popover.classList.toggle('d-invisible'),
     c && c.classList.toggle('d-invisible'),
-    search_bar && search_bar.classList.toggle('open'),
-    search_box.focus();
+    search_bar && search_bar.classList.toggle('open');
+    // search_box.focus();
   }
   var n = document.querySelector('.container'),
-  search_popover = document.querySelector('.search-popover'),
-  search_bar = document.querySelector('.search'),
-  search_box = document.querySelector('.search-box'),
-  search_button = document.querySelector('.search-button'),
+  search_popover = document.querySelector(".{{ popover }}"),
+  search_bar = document.querySelector(".{{ bar }}"),
+  // search_box = document.querySelector(""),
+  search_button = document.querySelector(".{{ button }}"),
   c = document.querySelector('.menu__sub-inner-more');
 
   search_popover && search_popover.addEventListener('click', function (e) {

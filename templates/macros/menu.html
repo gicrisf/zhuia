@@ -1,4 +1,8 @@
 {% macro items(menu) %}
+{%- set num = menu | length -%}
+{# Check if there are menu items to render, yes if > 0 #}
+
+{% if num > 0 -%}
 <ul>
   {%- for menu_item in menu -%}
     <li>
@@ -6,4 +10,76 @@
     </li>
   {%- endfor-%}
 </ul>
+{% endif %}
 {% endmacro items %}
+
+{% macro mobile_items(menu) %}
+{%- set num = menu | length -%}
+{# Check if there are menu items to render, yes if > 0 #}
+
+{% if num > 0 -%}
+<ul class="tree treemenu treemenu-root">
+  {%- for menu_item in menu -%}
+    <li class="tree-empty">
+      <span class="toggler"></span>
+      <a href="{{ get_url(path=menu_item.url) }}">{{ menu_item.name }}</a>
+    </li>
+  {%- endfor-%}
+</ul>
+{% endif %}
+
+<div style="margin: 3rem;" class="search-mobile">
+  {{ search::form(class="mobile-search", id="mobile-search", button="mobile-button") }}
+</div>
+<div>
+  {{ search::popover(class="mobile-popover") }}
+</div>
+{% endmacro items %}
+
+{% macro home() %}
+<a class="" href="{{ config.base_url }}">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+  </svg>
+  <span>Home</span>
+</a>
+{% endmacro home %}
+
+{% macro mobile_button() %}
+<div class="mobile-menu">
+  <div class="button_container" id="toggle" onclick="openOverlay()">
+    <span class="top"></span>
+    <span class="middle"></span>
+    <span class="bottom"></span>
+  </div>
+</div><!--./mobile-menu-->
+{% endmacro mobile_button %}
+
+{% macro mobile() %}
+<div class="mobile-container">
+        <div class="overlay" id="overlay">
+            <div style="padding: 1rem;">
+              {{ menu::home() }}
+            </div>
+            <nav class="overlay-menu">
+              {% if config.extra.main_menu -%}
+                {{ menu::mobile_items(menu=config.extra.main_menu) }}
+              {% endif -%}
+            </nav>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    var overlay = document.getElementById('overlay');
+
+    function openOverlay(){
+        if (overlay.classList.contains("open")) {
+            overlay.classList.remove("open");
+        }
+        else {
+            overlay.classList.add("open");
+        }
+    }
+</script>
+{% endmacro mobile %}

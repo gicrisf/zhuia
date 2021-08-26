@@ -12,13 +12,15 @@
     </div>
   </section>
 </section>
+{% endmacro footer %}
 
+{% macro scripts() %}
 {% if config.extra.darkmode_switch %}
 {{ theme_switcher::script() }}
 {% endif %}
 
 {% if config.build_search_index %}
-{{ search::script() }}
+{{ search::script(popover="search-popover", bar="search", button="search-button") }}
+{{ search::script(popover="mobile-popover", bar="mobile-search", button="mobile-button") }}
 {% endif %}
-
-{% endmacro footer %}
+{% endmacro scripts %}
