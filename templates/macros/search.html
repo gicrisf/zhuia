@@ -1,3 +1,20 @@
+{% macro button() %}
+<div class="menu-trigger search">
+  {{ search::ani_form() }}
+  <span class="menu-icon search-button">
+  <svg width="16" height="16" aria-hidden="true" focusable="false" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+  </svg>
+  </span>
+</div>
+{% endmacro button %}
+
+{% macro ani_form() %}
+<form class="form-search">
+  <input id="search" type="search" class="input-large search-query search-box">
+</form>
+{% endmacro ani_form %}
+
 {% macro form(class, id, button) %}
 <div class="input-group input-inline {{ class }}">
   <input id="{{ id }}" class="form-input input-sm" type="text">
@@ -40,12 +57,12 @@
     search_popover && search_popover.classList.toggle('d-invisible'),
     c && c.classList.toggle('d-invisible'),
     search_bar && search_bar.classList.toggle('open');
-    // search_box.focus();
+    search_box.focus();
   }
   var n = document.querySelector('.container'),
   search_popover = document.querySelector(".{{ popover }}"),
   search_bar = document.querySelector(".{{ bar }}"),
-  // search_box = document.querySelector(""),
+  search_box = document.querySelector(""),
   search_button = document.querySelector(".{{ button }}"),
   c = document.querySelector('.menu__sub-inner-more');
 
@@ -79,3 +96,50 @@
 {%- endif -%}
 {% endif %}
 {% endmacro script %}
+
+{% macro ani_script() %}
+<script type="text/javascript">
+!function () {
+  function t() {
+    search_popover && search_popover.classList.toggle('hidden'),
+    c && c.classList.toggle('hidden'),
+    search_bar && search_bar.classList.toggle('open'),
+    search_box.focus();
+  }
+  var n = document.querySelector('.container'),
+  search_popover = document.querySelector('.search-popover'),
+  search_bar = document.querySelector('.search'),
+  search_box = document.querySelector('.search-box'),
+  search_button = document.querySelector('.search-button'),
+  c = document.querySelector('.menu__sub-inner-more');
+
+  search_popover && search_popover.addEventListener('click', function (e) {
+    return e.stopPropagation()
+  }),
+  document.body.addEventListener('click', function () {
+    !c || c.classList.contains('hidden') ? !search_popover.classList.contains('hidden') && search_popover.classList.add('hidden') : c.classList.add('hidden'), search_bar.classList.remove('open')
+  }),
+  search_bar && search_bar.addEventListener('click', function (e) {
+    return e.stopPropagation()
+  }),
+  search_button && search_button.addEventListener('click', function (e) {
+    e.stopPropagation(),
+    t()
+  })
+}();
+</script>
+
+{% if config.build_search_index %}
+<script src="{{ get_url(path='assets/js/search.js', trailing_slash=false) | safe }}"></script>
+<script defer src="{{ get_url(path='elasticlunr.min.js', trailing_slash=false) | safe }}"></script>
+{%- if config.default_language and config.default_language != "en" -%}
+{%- set search_index_file = "search_index." ~ config.default_language ~ ".js" %}
+{%- set lunr_lang_file = "assets/js/lunr-languages/lunr." ~ config.default_language ~ ".min.js" -%}
+<script defer src="{{ get_url(path='assets/js/lunr-languages/lunr.stemmer.support.min.js', trailing_slash=false) | safe }}"></script>
+<script defer src="{{ get_url(path=lunr_lang_file, trailing_slash=false) | safe }}"></script>
+<script defer src="{{ get_url(path=search_index_file, trailing_slash=false) | safe }}"></script>
+{%- else -%}
+<script defer src="{{ get_url(path='search_index.en.js', trailing_slash=false) | safe }}"></script>
+{%- endif -%}
+{% endif %}
+{% endmacro ani_script %}

@@ -6,7 +6,9 @@
         {{ menu::home() }}
       </section><!-- ./home button -->
       <section class="navbar-center hide-md">
-       {{ search::form(class="search", id="search", button="search-button") }}
+        {% if config.build_search_index %}
+        {{ search::form(class="search", id="search", button="search-button") }}
+        {% endif %}
       </section>
       <section class="navbar-section desktop-menu">
         <nav class="dropmenu animated">

@@ -27,13 +27,6 @@
   {%- endfor-%}
 </ul>
 {% endif %}
-
-<div style="margin: 3rem;" class="search-mobile">
-  {{ search::form(class="mobile-search", id="mobile-search", button="mobile-button") }}
-</div>
-<div>
-  {{ search::popover(class="mobile-popover") }}
-</div>
 {% endmacro items %}
 
 {% macro home() %}
