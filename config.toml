@@ -46,9 +46,9 @@ main_menu = [
 # The name must be coincident with the icon-pack one.
 telegram_link = "https://t.me/zwitterio"
 facebook_link = ""
-twitter_link = "https://twitter.com/cromo___"
-instagram_link = "https://instagram.com/cromo._"
-github_link = "https://github.com/mr-chrome"
+twitter_link = "https://twitter.com/gicrisf"
+instagram_link = "https://instagram.com/gicrisf"
+github_link = "https://github.com/gicrisf"
 
 # Post metadata
 show_author = true
@@ -67,7 +67,7 @@ text_snippet="Some text here"
 # TODO template
 
 # Embed twitter iframe
-tweets_by="cromo___"
+tweets_by="gicrisf"
 
 popular_tags=false
 archive=false
