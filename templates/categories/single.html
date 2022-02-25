@@ -1,7 +1,7 @@
 {%- extends "index.html"-%}
 {%- block content -%}
 <div class="container {{ grid_size }}">
-    <h1 class="post-title"> Category: {{ term.name }} ({{ term.pages | length }} post)</h1>
+    <h1 class="post-title"> Category: {{ term.name }} ({{ term.pages | length }})</h1>
 
     <ul>
         {%- for post in term.pages -%}
@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="tile-content">
-    <p class="tile-title">{{ post.title }}</p>
+    <p class="tile-title post-title">{{ post.title }}</p>
     <p class="tile-subtitle">{{ post.date | date(format="%Y.%m.%d") }}</p>
 
     <p>{%- for cat in post.taxonomies["categories"] -%}
