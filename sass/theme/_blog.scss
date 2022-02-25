@@ -148,3 +148,11 @@ ul.pagination {
   padding: 1rem;
   border-radius: 1rem;
 }
+
+.paginator {
+  background: linear-gradient(225deg,#3085EE 0%,#1167D0 65%,#001D4A 100%);
+
+  & .page-item a {
+    color: white;
+  }
+}
