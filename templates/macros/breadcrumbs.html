@@ -2,8 +2,8 @@
 <div id="breadcrumbs" itemtype="http://schema.org/BreadcrumbList" class="hide-sm">
   {% for parent in page.ancestors %}
     {% set s = get_section(path=parent, include_pages=false) %}
-    <span><a href="{{s.permalink}}">{{s.title | default(value="Home")}}</a></span>
+    <span><a href="{{ s.permalink }}">{{ s.title | default(value="Home") }}</a></span>
   {% endfor %}
-    <span><a href="{{page.permalink}}">{{page.title}}</a></span>
+    <span><a href="{{ page.permalink }}">{{ page.title }}</a></span>
 </div>
 {% endmacro breadcrumbs %}

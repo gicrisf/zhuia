@@ -1,6 +1,6 @@
 {% macro paginate(grid_size) %}
 <section class="container {{ grid_size }}">
-<ul class="pagination bg-secondary">
+<ul class="pagination paginator">
   {% if page.later %}
   <li class="page-item page-prev">
     <a href="{{ page.later.permalink }}">
