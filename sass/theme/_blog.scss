@@ -7,6 +7,14 @@
   }
 }
 
+.card .post-title a {
+    font-size: 1.8rem;
+}
+
+.post-title {
+  font-weight: 600;
+}
+
 #frontmatter {
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -42,12 +50,6 @@
 
 /** Blog Listing **/
 .blog-listing {
-
-  .bricklayer-column {
-    padding-left: 0px;
-    padding-right: 25px;
-
-  }
   .card {
     margin-bottom: 25px;
     border: 0;
@@ -56,14 +58,6 @@
 
   .card-footer {
     text-align: right;
-  }
-
-  .blog-date {
-    font-size: 13px;
-  }
-
-  .label {
-
   }
 }
 
