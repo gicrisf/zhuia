@@ -30,7 +30,7 @@
   align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
-
+  padding: 1rem;
 
   i {
     display: none;
@@ -45,8 +45,7 @@
 
   span, a {
     &:not(:first-child)::before {
-      color: #e7e9ed;
-      content: "/";
+      content: ">";
       padding-right: 1rem;
     }
   }
