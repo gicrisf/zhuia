@@ -4,7 +4,7 @@ author="Lorem Ipsum"
 date=2021-06-19
 
 [extra]
-cover_image="hello.jpg"
+cover_image="christopher-campbell-rDEOVtE7vOs-unsplash.jpg"
 +++
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum metus. Aenean rutrum ligula sodales ex auctor, sed tempus dui mollis. Curabitur ipsum dui, aliquet nec commodo at, tristique eget ante. **Donec quis dolor nec nunc mollis interdum vel in purus**. Sed vitae leo scelerisque, sollicitudin elit sed, congue ante. In augue nisl, vestibulum commodo est a, tristique porttitor est. Proin laoreet iaculis ornare. Nullam ut neque quam.
@@ -13,13 +13,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec interdum met
 
 > Fusce pharetra suscipit orci nec tempor. Quisque vitae sem sit amet sem mollis consequat. Sed at imperdiet lorem. Vestibulum pharetra faucibus odio, ac feugiat tellus sollicitudin at. Pellentesque varius tristique mi imperdiet dapibus. Duis orci odio, sodales lacinia venenatis sit amet, feugiat et diam.
 
+![](christopher-campbell-rDEOVtE7vOs-unsplash.jpg)
+
+Photo by <a href="https://unsplash.com/@chrisjoelcampbell?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christopher Campbell</a> on <a href="https://unsplash.com/s/photos/person?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 Sed a leo id risus venenatis vulputate non quis nulla. Aenean nisl quam, lacinia pulvinar orci sit amet, eleifend eleifend dui. Nulla tempor ligula leo, eu vehicula quam condimentum a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla gravida tristique nunc sed semper. Morbi nec felis odio.
 
 - Sed efficitur, lacus ac scelerisque pellentesque, lectus risus dignissim nisl, fermentum semper lectus diam eget lacus.
 - Nunc ornare purus enim, id eleifend mauris vestibulum volutpat.
 - Aenean facilisis ut ipsum condimentum ultrices.
 - Fusce sed metus vulputate, lobortis purus et, finibus purus. Suspendisse quis posuere lorem. Vivamus vulputate nec risus in pulvinar.
-
-Image. It's slightly boxed:
-
-![](hello.jpg)
