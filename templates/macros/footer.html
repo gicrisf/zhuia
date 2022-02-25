@@ -1,25 +1,15 @@
 {% macro footer(grid_size) %}
-<section id="footer">
-  <section class="container {{ grid_size }}">
+<section id="footer" class="bg-gray">
+  <div class="container {{ grid_size }}">
     <div class="columns">
-      <div class="column col-9 col-sm-12">
-        <p><a href="https://github.com/mr-chrome/zhuia">Zhuia</a> by <a href="https://github.com/mr-chrome">mr-chrome</a> | built on Zola</p>
+      <div class="column col-6 col-lg-12">
+        Made by <a href="https://github.com/gicrisf/">gicrisf</a>.
+        <strong>Zhuia</strong>&nbsp;<a href="https://github.com/gicrisf/zhuia">source code</a>
+        is licensed under <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
       </div>
-      <div class="column col-3 col-sm-12">
-        {# theme_switcher::switch() #}
-        {# Social media here #}
+      <div class="column col-6 col-lg-12">
       </div>
     </div>
-  </section>
+  </div>
 </section>
 {% endmacro footer %}
-
-{% macro scripts() %}
-{% if config.extra.darkmode_switch %}
-{{ theme_switcher::script() }}
-{% endif %}
-
-{% if config.build_search_index %}
-{{ search::script(popover="search-popover", bar="search", button="search-button") }}
-{% endif %}
-{% endmacro scripts %}

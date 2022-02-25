@@ -12,7 +12,5 @@ body.sticky-footer {
 
 #footer {
   color: $gray-color;
-  background-color: $bg-color-light;
-  padding: 1rem $horiz-padding 0;
-  text-align: center;
+  padding: 1rem $horiz-padding 1rem;
 }

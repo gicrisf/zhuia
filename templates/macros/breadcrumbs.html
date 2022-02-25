@@ -1,5 +1,5 @@
 {% macro breadcrumbs(page) %}
-<div id="breadcrumbs" itemtype="http://schema.org/BreadcrumbList" class="hide-sm" style="margin-top: 1rem; margin-bottom: 1rem;">
+<div id="breadcrumbs" itemtype="http://schema.org/BreadcrumbList" class="hide-sm">
   {% for parent in page.ancestors %}
     {% set s = get_section(path=parent, include_pages=false) %}
     <span><a href="{{s.permalink}}">{{s.title | default(value="Home")}}</a></span>

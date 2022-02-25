@@ -6,9 +6,6 @@
         {{ menu::home() }}
       </section><!-- ./home button -->
       <section class="navbar-center hide-md">
-        {% if config.build_search_index %}
-        {{ search::form(class="search", id="search", button="search-button") }}
-        {% endif %}
       </section>
       <section class="navbar-section desktop-menu">
         <nav class="dropmenu animated">
@@ -23,8 +20,6 @@
       </section><!-- ./desktop-menu -->
     </nav>
   </section><!-- ./container -->
-
-  {{ search::popover(class="search-popover") }}
 </header>
 
 {{ menu::mobile_button() }}
