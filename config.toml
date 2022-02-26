@@ -40,12 +40,13 @@ main_menu = [
 ]
 
 # Social media buttons to display. You define a url and the name of the platform.
-# The name must be coincident with the icon-pack one.
-telegram_link = "https://t.me/zwitterio"
-facebook_link = ""
-twitter_link = "https://twitter.com/gicrisf"
-instagram_link = "https://instagram.com/gicrisf"
-github_link = "https://github.com/gicrisf"
+social_links = [
+    {url = "https://t.me/zwitterio", name = "telegram"},
+    {url = "https://twitter.com/gicrisf", name = "twitter"},
+    {url = "https://github.com/gicrisf", name = "github"},
+    # {url = "", name = "instagram"},
+    # {url = "", name = "facebook"},
+]
 
 # Post metadata
 show_author = true
