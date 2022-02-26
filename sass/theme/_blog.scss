@@ -57,6 +57,24 @@
     margin-bottom: 25px;
     border: 0;
     box-shadow: 0 10px 45px -9px rgba(0,0,0,0.1);
+
+    & .card-image:first-child img {
+      opacity: 0.9;
+    }
+
+    &:hover {
+      box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.10);
+      -webkit-transition: all 0.2s ease-in;
+      -moz-transition: all 0.2s ease-in;
+      -ms-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
+
+      & .card-image:first-child img{
+        opacity: 1;
+      }
+    }
+
   }
 
   .card-footer {
@@ -136,11 +154,11 @@ ul.pagination {
   .post-title a {
     font-weight: 600;
   }
-}
 
-.card .card-image:first-child img {
+  & .card-image:first-child img {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+  }
 }
 
 /** Pagination */
@@ -154,5 +172,10 @@ ul.pagination {
 
   & .page-item a {
     color: white;
+
+    &:hover {
+      color: white;
+      font-weight: 600;
+    }
   }
 }

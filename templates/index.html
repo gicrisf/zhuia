@@ -76,9 +76,11 @@
 
             {%- if config.extra.sidebar.active -%}
             <div class="columns">
-              <div id="item" class="column col-8 col-md-12 extra-spacing blog-listing">
+              <div id="item" class="column col-8 col-md-12 extra-spacing">
                 {%- block content -%}
+                <div class="blog-listing">
                   {{ lists::list_pages() }}
+                </div>
                 {%- endblock content -%}
               </div>
               <div id="sidebar" class="column col-4 col-md-12">
