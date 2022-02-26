@@ -2,35 +2,34 @@
 {%- block content -%}
 <div class="container {{ grid_size }}">
     <h1 class="post-title"> Category: {{ term.name }} ({{ term.pages | length }})</h1>
-
     <ul>
-        {%- for post in term.pages -%}
-<li class="tile tile-centered">
-  <div class="tile-icon">
-    <div class="example-tile-icon">
-      <i class="icon icon-file centered"></i>
-    </div>
-  </div>
-  <div class="tile-content">
-    <p class="tile-title post-title">{{ post.title }}</p>
-    <p class="tile-subtitle">{{ post.date | date(format="%Y.%m.%d") }}</p>
+      {%- for post in term.pages -%}
+      <li class="tile tile-centered">
+        <div class="tile-icon">
+          <div class="example-tile-icon">
+            <i class="icon icon-file centered"></i>
+          </div>
+        </div>
+        <div class="tile-content">
+          <p class="tile-title post-title">{{ post.title }}</p>
+          <p class="tile-subtitle">{{ post.date | date(format="%Y.%m.%d") }}</p>
 
-    <p>{%- for cat in post.taxonomies["categories"] -%}
-                    {%- if loop.last -%}
-                        <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>
-                    {%- elif loop.first -%}
-                            <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,&nbsp;
-                    {%- else -%}
-                        <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,
-                        {%- endif -%}
-                {% endfor %}
-</p>
-  </div>
-  <div class="tile-action">
-    <button class="btn">Read</button>
-  </div>
-</li>
-        {%- endfor -%}
-  </ul>
+          <p>{%- for cat in post.taxonomies["categories"] -%}
+            {%- if loop.last -%}
+            <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>
+            {%- elif loop.first -%}
+            <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,&nbsp;
+            {%- else -%}
+            <a href="{%- set _cat = get_taxonomy_url(kind="categories", name=cat) -%}{{ _cat }}">{{ cat }}</a>,
+            {%- endif -%}
+            {% endfor %}
+          </p>
+        </div>
+        <div class="tile-action">
+          <button class="btn">Read</button>
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
 </div>
 {%- endblock content -%}
