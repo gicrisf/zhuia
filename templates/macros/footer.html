@@ -3,6 +3,11 @@
   <div class="container {{ grid_size }}">
     {{ social_buttons::social_buttons() }}
     <div class="columns">
+      {% if config.extra.footer_tagline %}
+      <div class="column col-6 col-lg-12 col-mx-auto" style="text-align: center;">
+        {{ config.extra.footer_tagline }}
+      </div>
+      {% endif %}
       <div class="column col-6 col-lg-12 col-mx-auto" style="text-align: center;">
         Made by <a href="https://github.com/gicrisf/">gicrisf</a> -
         <strong>Zhuia</strong>&nbsp;<a href="https://github.com/gicrisf/zhuia">source code</a>

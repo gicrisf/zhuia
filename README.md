@@ -1,10 +1,10 @@
-# zhuia
+# Zhuia
 
-An elegant theme for zola powered by Spectre.css with (almost) no JavaScript (a small script runs the hamburger menu overlay: that's it!)
+An elegant theme for [Zola](https://getzola.org/) powered by [Spectre.css](https://picturepan2.github.io/spectre/) with (almost) no JavaScript (a small script runs the beautiful hamburger menu overlay: that's it!)
 
-Demo: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
+**DEMO**: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
 
------
+![separator](blue-bar.png)
 
 ## Contents
 
@@ -14,13 +14,13 @@ Demo: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
   - [SEO](#seo)
   - [Social](#social)
   - [Footer](#footer)
-  - [Sass](#sass)
 - [Name](#name)
-- [Original](#original)
+- [Genesis](#genesis)
 - [License](#license)
 
 
 ## Installation
+
 First download this theme to your `themes` directory:
 
 ```bash
@@ -44,6 +44,7 @@ sort_by = "date"
 ## Options
 
 ### Title
+
 Set a title and description in the config to appear in the site header and on the RSS feed:
 
 ```toml
@@ -62,7 +63,8 @@ author = "Timothy Morton"
 og_image = "Hyperobjects.png"
 ```
 
-### Social links
+### Social
+
 Set a field in `extra` with a key of `footer_links`:
 
 ```toml
@@ -78,7 +80,7 @@ social_links = [
 ]
 ```
 
-### Footer (TODO)
+### Footer
 
 You can add your own copyright or whatever to the footer with a through a simple option on the config file:
 
@@ -89,6 +91,7 @@ footer_tagline = "What if everything is an illusion and nothing exists? In that 
 ```
 
 ## Name
+
 The name arise from two parts:
 - The generator, Zola, gives the "Z";
 - An extinct species of New Zealand wattlebird, the huia, provide the second part.
@@ -96,7 +99,9 @@ The name arise from two parts:
 The theme is built on Spectre CSS framework, so I found reasonable evoking a spectral species.
 
 ## Genesis
-This theme is based on a Pelican theme I originally made for my blog, which was in turn based on the Grav theme [Quark](https://github.com/getgrav/grav-theme-quark).
+
+This theme is based on a Pelican theme I originally made for my blog, which was in turn based on the 
+Grav theme [Quark](https://github.com/getgrav/grav-theme-quark).
 
 ## License
 

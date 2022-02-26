@@ -12,7 +12,7 @@ feed_filename = "rss.xml"
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
+build_search_index = false
 
 # Built in taxonomies of huia.
 taxonomies = [
@@ -28,6 +28,9 @@ highlight_code = false
 [extra]
 # The max-width of the page content
 grid_size = "grid-lg"
+
+# Footer
+# footer_tagline = "Your tagline"
 
 # Default author for articles
 author = "You"
