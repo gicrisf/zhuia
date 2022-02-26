@@ -57,13 +57,13 @@ read_more = "read more"
 # Enable/Disable sidebar
 active=true
 
-# Include a text snippet
+# Include a text snippet in the sidebar
 text_snippet="Some text here"
 
 # Include search bar
 # TODO template
 
-# Embed twitter iframe
+# Embed twitter iframe in the sidebar
 tweets_by="gicrisf"
 
 popular_tags=false

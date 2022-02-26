@@ -1,6 +1,6 @@
-{% macro list_pages() %}
+{% macro list_pages(pages) %}
 <div class="posts">
-  {%- for page in paginator.pages -%}
+  {%- for page in pages -%}
   {{ posts::card(page=page, full=false) }}
   {%- endfor -%}
 </div>

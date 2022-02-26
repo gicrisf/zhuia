@@ -77,7 +77,7 @@
               <div id="item" class="column col-8 col-md-12 extra-spacing">
                 {%- block content -%}
                 <div class="blog-listing">
-                  {{ lists::list_pages() }}
+                  {{ lists::list_pages(pages=paginator.pages) }}
                 </div>
                 {%- endblock content -%}
               </div>
