@@ -9,7 +9,6 @@
 {% import "macros/menu.html" as menu -%}
 {% import "macros/breadcrumbs.html" as breadcrumbs -%}
 {% import "macros/social_buttons.html" as social_buttons -%}
-{% import "macros/frontmatter.html" as frontmatter -%}
 {% import "macros/sidebar.html" as sidebar -%}
 {% import "macros/theme_switcher.html" as theme_switcher -%}
 {% import "macros/footer.html" as footer -%}
@@ -64,7 +63,6 @@
     <div id="page-wrapper">
       {%- block header -%}
           {{ header::header(grid_size=grid_size) }}
-          {{ frontmatter::frontmatter(grid_size=grid_size) }}
       {%- endblock header -%}
 
       <section id="start">
