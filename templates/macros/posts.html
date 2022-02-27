@@ -129,30 +129,30 @@
 
 {% macro card(page, full) %}
 <div class="card">
-    {% if page.extra.cover_image %}
-    {% if page.extra.cover_image is matching("[.](jpg|jpeg|png|gif)$") %}
-    {% set parent_dir_rel_path = posts::parent_dir_rel_path(rel_path=page.relative_path) | trim %}
-    {% set imgpath = parent_dir_rel_path ~ "/" ~ page.extra.cover_image %}
+  {% if page.extra.cover_image %}
+  {% if page.extra.cover_image is matching("[.](jpg|jpeg|png|gif)$") %}
+  {% set parent_dir_rel_path = posts::parent_dir_rel_path(rel_path=page.relative_path) | trim %}
+  {% set imgpath = parent_dir_rel_path ~ "/" ~ page.extra.cover_image %}
 
   {% set img300 = resize_image(path=imgpath, op='fill', width=300, height=150) %}
   {% set img600 = resize_image(path=imgpath, op='fill', width=600, height=300) %}
   {% set img900 = resize_image(path=imgpath, op='fill', width=900, height=450) %}
   {% set img1200 = resize_image(path=imgpath, op='fill', width=1200, height=600) %}
 
-    <div class="card-image">
+  <div class="card-image">
       <a href="{%- if full -%}{{ page.permalink }}{{ page.extra.cover_image }}{%- else -%}{{ page.permalink }}{% endif %}">
-<img
-  alt="{{ page.title | striptags }}"
-  class="post-cover
-        {% if page.extra.cover_classes %}
-        {{ page.extra.cover_classes | join(sep=' ') }}
-        {% endif %}"
-  srcset="{{ img300.url | safe }} 300w,
-	        {{ img600.url | safe }} 600w,
-	        {{ img900.url | safe }} 900w,
- 	      {{ img1200.url | safe }} 1200w,"
-  sizes="(max-width: 800px) 90vw,
-          1200px">
+        <img
+          alt="{{ page.title | striptags }}"
+          class="post-cover
+                 {% if page.extra.cover_classes %}
+                 {{ page.extra.cover_classes | join(sep=' ') }}
+                 {% endif %}"
+          srcset="{{ img300.url | safe }} 300w,
+                  {{ img600.url | safe }} 600w,
+                  {{ img900.url | safe }} 900w,
+                  {{ img1200.url | safe }} 1200w,"
+          sizes="(max-width: 800px) 90vw,
+                 1200px">
 
       </a>
     </div><!--./card-image-->
@@ -164,7 +164,7 @@
       <div class="card-subtitle text-gray">
         {{ posts::meta(page=page, author=config.extra.show_author) }}
       </div>
-      {%- endif -%}
+      {%- endif -%}{# ./if not full #}
       <div class="card-title" style="margin-top: .25rem;">
         {%- if full -%}
         <div class="text-center">
@@ -179,34 +179,40 @@
 
     <div class="card-body">
       {% if full %}
-      {{ page.content | safe }}
-      {% else %}
-      {% set show_read_more_btn = true %}
+        {{ page.content | safe }}
+      {% else %}{# else show the card for listing #}
+        {% set show_read_more_btn = true %}
 
       {%  if page.description -%}
-      {{ page.description }}
+        {{ page.description }}
       {% elif page.summary %}
-      {{ page.summary | striptags }}
+        {{ page.summary | striptags }}
       {% else %}
-      {% set show_read_more_btn = false %}
-      {%  endif -%}
-
-      {% if show_read_more_btn %}
-      <div>
-        <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
-      </div>
-      {% else %}
-      <div>
-        <a class="read-more button" href="{{ page.permalink }}">{{ config.extra.read_post }} →</a>
-      </div>
-      {% endif -%}
+        {% set show_read_more_btn = false %}
+      {%  endif -%}{# ./if page.description #}
       {% endif -%}{# endif full #}
     </div><!--./card-body-->
 
     <div class="card-footer">
-      {{  posts::taxonomies(taxonomy=page.taxonomies,
-        disp_cat=config.extra.show_categories,
-        disp_tag=config.extra.show_tags) }}
+      <div class="taxonomies text-left" style="margin-top: .5rem; margin-bottom: .5rem;">
+        {{  posts::taxonomies(
+            taxonomy=page.taxonomies,
+            disp_cat=config.extra.show_categories,
+            disp_tag=config.extra.show_tags
+          ) }}
+      </div>
+
+      {% if not full %}
+      {% if show_read_more_btn %}
+      <div>
+        <a class="read-more btn btn-primary" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
+      </div>
+      {% else %}
+      <div>
+        <a class="read-more btn btn-primary" href="{{ page.permalink }}">{{ config.extra.read_post }} →</a>
+      </div>
+      {% endif -%}
+      {% endif %}{# ./if not full #}
     </div><!--./card-footer-->
 </div><!--./card-->
 {% endmacro card %}

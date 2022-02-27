@@ -51,11 +51,11 @@ social_links = [
     # {url = "", name = "facebook"},
 ]
 
-# Post metadata
 show_author = true
 show_tags = true
 show_categories = true
 read_more = "read more"
+read_post = "read post"
 
 [extra.sidebar]
 # Enable/Disable sidebar
