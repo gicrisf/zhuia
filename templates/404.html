@@ -2,22 +2,20 @@
 
 {%- block title %}
     <title>Not Found - 404</title>
-    {# TODO: make some kind of social media linking, i guess? #}
-    {#%- include "snippets/social.html" %#}
 {%- endblock title -%}
 
 {%- block og_preview -%}
 {# og_preview not desired here #}
 {%- endblock og_preview -%}
 
-{%- block main -%}
+{%- block content -%}
 <div class="post">
-    <h1 class="post-title">
-        Not Found - 404
-    </h1>
+  <div class="content-title text-center">
+    <h1 class="post-title">Not Found - 404</h1>
+    </div>
 
     <div class="post-content">
-      <p>
+      <p class="text-center">
         The page you requested was not found.<br>
         You can try to find it by browsing the menus.
       </p>
@@ -36,7 +34,7 @@
 
     <!-- div class="search-container">{# TODO #}</div --> 
 
-    {% endif %}
+    {% endif %}{# ./if ddg_search #}
     </div>
 </div>
-{%- endblock main -%}
+{%- endblock content -%}

@@ -83,6 +83,12 @@
               </div>
               <div id="sidebar" class="column col-4 col-md-12">
                 <div class="sidebar-content">
+                  {% if config.extra.sidebar.author_bio %}
+                  {{ sidebar::author_bio(
+                  content=config.extra.sidebar.author_bio,
+                  avatar=config.extra.sidebar.author_avatar
+                  ) }}
+                  {% endif %}{# ./if author_bio #}
                   {% if config.extra.sidebar.text_snippet -%}
                     {{ sidebar::text_snippet(content=config.extra.sidebar.text_snippet) }}
                   {% endif -%}

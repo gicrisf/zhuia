@@ -5,7 +5,7 @@
 {% endmacro text_snippet %}
 
 {% macro tweets_by(id) %}
-<div class="sidebar-widget sidebar-twitter-widget">
+<div class="sidebar-widget">
 <div class="tweets-by-wrapper" style="height: 600px;">
 <a class="twitter-timeline" data-height="600" href="https://twitter.com/{{ id }}?ref_src=twsrc%5Etfw">Tweets by {{ id }}</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -21,7 +21,7 @@
 
 {% macro syndicate() %}
 <div class="sidebar-widget syndicate">
-<h4>Syndicate</h4>
+<h4>Feed</h4>
 <a class="btn" href="/{{ config.feed_filename }}">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rss-fill" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm1.5 2.5c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1 0-2zm0 4a6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1 0-2zm.5 7a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
@@ -30,3 +30,19 @@
 </a>
 </div>
 {% endmacro syndicate %}
+
+{% macro author_bio(content, avatar) %}
+<div class="sidebar-widget">
+  <div class="tile">
+    <div class="tile-icon">
+      <figure class="avatar avatar-xl">
+        <img src="{{ get_url(path=avatar) }}" alt="author avatar image">
+      </figure>
+    </div>
+    <div class="tile-content">
+      <p class="tile-title" style="font-weight: 600;">{{ config.extra.author }}</p>
+      <p class="tile-subtitle">{{ content }}</p>
+    </div>
+</div><!--./tile-->
+</div>
+{% endmacro author_card %}
