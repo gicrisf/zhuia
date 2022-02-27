@@ -4,7 +4,7 @@ An elegant theme for [Zola](https://getzola.org/) powered by [Spectre.css](https
 
 **DEMO**: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
 
-![separator](blue-bar.png)
+---
 
 ## Contents
 
