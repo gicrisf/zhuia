@@ -9,6 +9,7 @@ An elegant theme for [Zola](https://getzola.org/) powered by [Spectre.css](https
 ## Contents
 
 - [Installation](#installation)
+- [Features](#features)
 - [Options](#options)
   - [Title](#title)
   - [SEO](#seo)
@@ -40,6 +41,18 @@ To sort the post index by date, enable sort in your index section `content/_inde
 ```toml
 sort_by = "date"
 ```
+
+## Features
+- Lightweight and minimal
+- Spectre CSS Framework
+- Responsive for mobile support (with full-page mobile menu)
+- SCSS based CSS source files for easy customization
+- HTML based sidebar widget
+- Author card sidebar widget
+- Feed RSS/Atom
+- Open Graph and Twitter Cards support
+- Social buttons with icons
+- Deploy via Netlify (config already included)
 
 ## Options
 
