@@ -15,6 +15,10 @@
   font-weight: 600;
 }
 
+.post-meta {
+  color: #acb3c2;
+}
+
 #body-wrapper {
   margin-top: 2rem;
 }
@@ -95,6 +99,19 @@
 .label {
   font-size: 12px;
   text-transform: uppercase;
+
+  &.tag {
+    color: #454d5d;
+    background-color: white;
+    margin: 1px;
+    padding: 3px 5px;
+    font-family: "UniversNextPro-MediumExt",Arial,Helvetica,sans-serif;
+    border: solid 1px #b3b3b3;
+    line-height: normal;
+    text-align: center;
+    opacity: .5;
+    text-decoration: none;
+  }
 }
 
 .label.label-rounded {

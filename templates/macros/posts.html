@@ -66,17 +66,13 @@
 
 {% macro categories(categories) %}
     {%- for cat in categories -%}
-        {%- if loop.last -%}
-            <a class="label label-rounded label-secondary p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a> |
-        {%- else -%}
-            <a class="label label-rounded label-secondary p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>
-        {%- endif -%}
+    <a class="label label-rounded label-secondary p-category" href="{{ get_taxonomy_url(kind="categories", name=cat ) }}">{{ cat }}</a>
     {%- endfor -%}
-{% endmacro categories %}
+    {% endmacro categories %}
 
 {% macro tags(tags) %}
     {% for tag in tags -%}
-        <a href="{{get_taxonomy_url(kind="tags", name=tag )}}">#{{ tag }}</a>
+        <a class="label label-rounded tag" href="{{get_taxonomy_url(kind="tags", name=tag )}}">#{{ tag }}</a>
     {% endfor -%}
 {% endmacro tags %}
 
@@ -194,25 +190,30 @@
     </div><!--./card-body-->
 
     <div class="card-footer">
-      <div class="taxonomies text-left" style="margin-top: .5rem; margin-bottom: .5rem;">
-        {{  posts::taxonomies(
+      <div class="columns">
+        <div class="column col-9">
+          <div class="taxonomies text-left">
+            {{  posts::taxonomies(
             taxonomy=page.taxonomies,
             disp_cat=config.extra.show_categories,
             disp_tag=config.extra.show_tags
-          ) }}
-      </div>
-
-      {% if not full %}
-      {% if show_read_more_btn %}
-      <div>
-        <a class="read-more btn btn-primary" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
-      </div>
-      {% else %}
-      <div>
-        <a class="read-more btn btn-primary" href="{{ page.permalink }}">{{ config.extra.read_post }} →</a>
-      </div>
-      {% endif -%}
-      {% endif %}{# ./if not full #}
+            ) }}
+          </div>
+        </div><!--./col-6-->
+        {% if not full %}
+        <div class="column col-3" style="flex-direction: column-reverse;display: flex;">
+          {% if show_read_more_btn %}
+          <div style="flex-direction: column-reverse;display: flex;">
+            <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
+          </div>
+          {% else %}
+          <div style="flex-direction: column-reverse;display: flex;">
+            <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_post }} →</a>
+          </div>
+          {% endif -%}
+        </div><!--./col6-->
+        {% endif %}{# ./if not full #}
+        </div><!--./columns-->
     </div><!--./card-footer-->
 </div><!--./card-->
 {% endmacro card %}

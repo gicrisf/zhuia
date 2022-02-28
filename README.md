@@ -1,6 +1,6 @@
 # Zhuia
 
-An elegant theme for [Zola](https://getzola.org/) powered by [Spectre.css](https://picturepan2.github.io/spectre/) with (almost) no JavaScript (a small script runs the beautiful hamburger menu overlay: that's it!)
+An elegant but still playful theme for [Zola](https://getzola.org/) powered by [Spectre.css](https://picturepan2.github.io/spectre/) with (almost) no JavaScript (a small script runs the beautiful hamburger menu overlay: that's it!)
 
 **DEMO**: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
 
