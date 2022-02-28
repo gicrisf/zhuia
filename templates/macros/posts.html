@@ -204,11 +204,11 @@
         <div class="column col-3 col-sm-5" style="flex-direction: column-reverse;display: flex;">
           {% if show_read_more_btn %}
           <div style="flex-direction: column-reverse;display: flex;">
-            <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
+            <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_more_prompt }} →</a>
           </div>
           {% else %}
           <div style="flex-direction: column-reverse;display: flex;">
-            <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_post }} →</a>
+            <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_post_prompt }} →</a>
           </div>
           {% endif -%}
         </div><!--./col6-->

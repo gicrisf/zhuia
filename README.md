@@ -1,6 +1,6 @@
 # Zhuia
 
-An elegant but still playful theme for [Zola](https://getzola.org/) powered by [Spectre.css](https://picturepan2.github.io/spectre/) with (almost) no JavaScript (a small script runs the beautiful hamburger menu overlay: that's it!)
+An elegant but still playful theme for [Zola](https://getzola.org/) powered by [Spectre.css](https://picturepan2.github.io/spectre/) with no JavaScript (or with some small scripts: it's up to you!)
 
 **DEMO**: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
 
@@ -58,14 +58,16 @@ sort_by = "date"
 - [x] Tags AND categories
 - [x] Granular image optimization for a really faster loading on mobile
 - [x] Pagination
+- [x] Easily extendable menu
 - [ ] Inter-page pagination
-- [ ] Optional NoJs
+- [x] Optional NoJs
 - [ ] Hamburger animation
 - [ ] Comments
 - [ ] Related posts (not sure about this)
 - [ ] Search bar
 - [ ] Math rendering
 - [ ] Other shortcodes
+- [ ] Multilanguage support
 
 ## Options
 
@@ -88,6 +90,13 @@ Most SEO tags are populated by the page metadata, but you can set the `author` a
 author = "Timothy Morton"
 og_image = "Hyperobjects.png"
 ```
+
+### Menu
+You can choose between two modes:
+- With a small script for an elegant overlay menu
+- Without any scripts at all (it just your show menu underneath)
+
+![mobile menus](screenshot-mobile-menus.png)
 
 ### Social
 
