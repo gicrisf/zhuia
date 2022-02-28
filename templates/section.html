@@ -1,0 +1,17 @@
+{% extends "index.html" -%}
+
+{%- block title %}
+    <title>{{ section.title }} - {{ config.extra.author }}</title>
+{%- endblock title -%}
+
+{%- block content -%}
+    <div class="post">
+        <div class="content-title">
+            <h1 class="post-title">
+                <a href="{{ section.permalink  }}">{{ section.title }}</a>
+            </h1>
+        </div>
+
+            {{ section.content | safe }}
+    </div>
+{%- endblock content -%}

@@ -40,6 +40,7 @@ author = "You"
 main_menu = [
               {url="/tags/", name="tags"},
               {url="/categories/", name="categories"},
+              {url="/about", name="about"},
 ]
 
 # Social media buttons to display. You define a url and the name of the platform.
