@@ -18,6 +18,7 @@ An elegant but still playful theme for [Zola](https://getzola.org/) powered by [
 - [Name](#name)
 - [Genesis](#genesis)
 - [License](#license)
+- [TODOs](#todos)
 
 
 ## Installation
@@ -43,16 +44,28 @@ sort_by = "date"
 ```
 
 ## Features
-- Lightweight and minimal
-- Spectre CSS Framework
-- Responsive for mobile support (with full-page mobile menu)
-- SCSS based CSS source files for easy customization
-- HTML based sidebar widget
-- Author card sidebar widget
-- Feed RSS/Atom
-- Open Graph and Twitter Cards support
-- Social buttons with icons
-- Deploy via Netlify (config already included)
+- [x] Lightweight and minimal
+- [x] Spectre CSS Framework
+- [x] Responsive for mobile support (with full-page mobile menu)
+- [x] SCSS based CSS source files for easy customization
+- [x] HTML based sidebar widget
+- [x] Author card sidebar widget
+- [x] Optional twitter sidebar widget
+- [x] Feed RSS/Atom
+- [x] Open Graph and Twitter Cards support
+- [x] Social buttons with icons
+- [x] Deploy via Netlify (config already included)
+- [x] Tags AND categories
+- [x] Granular image optimization for a really faster loading on mobile
+- [x] Pagination
+- [ ] Inter-page pagination
+- [ ] Optional NoJs
+- [ ] Hamburger animation
+- [ ] Comments
+- [ ] Related posts (not sure about this)
+- [ ] Search bar
+- [ ] Math rendering
+- [ ] Other shortcodes
 
 ## Options
 
