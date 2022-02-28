@@ -1,6 +1,8 @@
 # Zhuia
 
-An elegant but still playful theme for [Zola](https://getzola.org/) powered by [Spectre.css](https://picturepan2.github.io/spectre/) with no JavaScript (or with some small scripts: it's up to you!)
+An elegant but still playful theme for [Zola](https://getzola.org/) powered by [Spectre.css](https://picturepan2.github.io/spectre/).
+
+It is especially optimized for mobile navigation (optionally without JavaScript, if you don't like fancy stuff).
 
 **DEMO**: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
 
@@ -49,7 +51,8 @@ sort_by = "date"
 - [x] Responsive for mobile support (with full-page mobile menu)
 - [x] SCSS based CSS source files for easy customization
 - [x] HTML based sidebar widget
-- [x] Author card sidebar widget
+- [x] Author card sidebar widget with customizable avatar
+- [ ] Multi-author support
 - [x] Optional twitter sidebar widget
 - [x] Feed RSS/Atom
 - [x] Open Graph and Twitter Cards support
@@ -65,9 +68,9 @@ sort_by = "date"
 - [ ] Comments
 - [ ] Related posts (not sure about this)
 - [ ] Search bar
-- [ ] Math rendering
-- [ ] Other shortcodes
-- [ ] Multilanguage support
+- [ ] Math rendering (WIP)
+- [ ] Other shortcodes (WIP)
+- [ ] Multilanguage support (WIP)
 
 ## Options
 
@@ -114,6 +117,11 @@ social_links = [
     {url = "https://github.com/gicrisf", name = "github"},
 ]
 ```
+
+![social buttons](social-buttons.png)
+
+The theme automatically use the right icons for the social in the example.
+We can expand the support to other social, for sure: make a PR or open an enhancement issue to ask a new implementation.
 
 ### Footer
 
