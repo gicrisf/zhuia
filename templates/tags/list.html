@@ -1,21 +1,25 @@
 {% extends "index.html" %}
 {%- block content -%}
 <div class="container {{ grid_size }}">
-    <div class="content-title text-center">
-    <h1 class="post-title">Tags</h1>
+    <div class="content-title">
+        <h1 class="post-title">Tags</h1>
     </div>
-    <ul>
-        {%- for term in terms -%}
-            <li class="tag-list" style="list-style-type: none">
-                <div class="columns">
-                    <div class="column col-6">
-                <a class="label label-rounded tag" href="{{ get_taxonomy_url(kind="tags", name=term.name) }}">#{{ term.name }}</a>
-                    </div>
-                    <div class="column col-6">
-                        ({{ term.pages | length }} post{{ term.pages | length | pluralize}})
-                    </div>
-            </li>
-        {%- endfor -%}
+    <ul class="taxonomy">
+    {%- for term in terms -%}
+    <li>
+        <div class="columns">
+            <div class="column col-6">
+                <a
+                  class="label label-rounded tag"
+                  href="{{ get_taxonomy_url(kind='tags', name=term.name) }}">
+                  #{{ term.name }}
+                </a>
+            </div>
+            <div class="column col-6">
+                ({{ term.pages | length }} post{{ term.pages | length | pluralize}})
+            </div>
+    </li>
+    {%- endfor -%}
     </ul>
 </div>
 {%- endblock content -%}

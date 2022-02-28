@@ -1,22 +1,25 @@
 {% extends "index.html" %}
 {%- block content -%}
 <div class="container {{ grid_size }}">
-    <div class="content-title text-center">
+    <div class="content-title">
       <h1 class="post-title">Categories</h1>
     </div>
-    <ul>
-      {%- for cat in terms -%}
- <li class="tag-list" style="list-style-type: none">
-                <div class="columns">
-                    <div class="column col-6">
-                <a class="label label-rounded label-secondary" href="{{ get_taxonomy_url(kind="categories", name=cat.name) }}">{{ cat.name }}</a>
-                    </div>
-                    <div class="column col-6">
-                        ({{ cat.pages | length }} post{{ cat.pages | length | pluralize}})
-                    </div>
-            </li>
-
-      {%- endfor -%}
+    <ul class="taxonomy">
+    {%- for cat in terms -%}
+    <li>
+      <div class="columns">
+        <div class="column col-6">
+          <a
+            class="label label-rounded label-secondary"
+            href="{{ get_taxonomy_url(kind='categories', name=cat.name) }}">
+            {{ cat.name }}
+          </a>
+        </div>
+        <div class="column col-6">
+          ({{ cat.pages | length }} post{{ cat.pages | length | pluralize}})
+        </div>
+    </li>
+    {%- endfor -%}
     </ul>
-</div>
+</div><!--./container-->
 {%- endblock content -%}

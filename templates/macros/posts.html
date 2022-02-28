@@ -191,7 +191,7 @@
 
     <div class="card-footer">
       <div class="columns">
-        <div class="column col-9">
+        <div class="column col-9 col-sm-7">
           <div class="taxonomies text-left">
             {{  posts::taxonomies(
             taxonomy=page.taxonomies,
@@ -201,7 +201,7 @@
           </div>
         </div><!--./col-6-->
         {% if not full %}
-        <div class="column col-3" style="flex-direction: column-reverse;display: flex;">
+        <div class="column col-3 col-sm-5" style="flex-direction: column-reverse;display: flex;">
           {% if show_read_more_btn %}
           <div style="flex-direction: column-reverse;display: flex;">
             <a class="read-more btn btn-sm" href="{{ page.permalink }}">{{ config.extra.read_more }} →</a>
