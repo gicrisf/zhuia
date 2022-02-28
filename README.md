@@ -43,7 +43,7 @@ sort_by = "date"
 
 ## Features
 - [x] Lightweight and minimal
-- [x] Spectre CSS Framework
+- [x] Spectre CSS classes to manage content. [Look at the docs](https://picturepan2.github.io/spectre/)
 - [x] Responsive for mobile support (with full-page mobile menu)
 - [x] SCSS based CSS source files for easy customization
 - [x] HTML based sidebar widget
@@ -68,6 +68,7 @@ sort_by = "date"
 - [ ] Other shortcodes (WIP)
 - [ ] Multilanguage support (WIP)
 - [ ] Dark mode
+- [ ] Table of Contents
 
 ## Options
 
@@ -136,7 +137,7 @@ The name arise from two parts:
 - The generator, Zola, gives the "Z";
 - An extinct species of New Zealand wattlebird, the huia, provide the second part.
 
-The theme is built on Spectre CSS framework, so I found reasonable evoking a spectral species.
+The theme is built on **Spectre** CSS framework, so I found reasonable evoking a **spectral species**.
 
 ## Genesis
 
