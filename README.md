@@ -6,8 +6,6 @@ It is especially optimized for mobile navigation (optionally without JavaScript,
 
 **DEMO**: [https://zhuia.netlify.app/](https://zhuia.netlify.app/)
 
----
-
 ## Contents
 
 - [Installation](#installation)
@@ -20,8 +18,6 @@ It is especially optimized for mobile navigation (optionally without JavaScript,
 - [Name](#name)
 - [Genesis](#genesis)
 - [License](#license)
-- [TODOs](#todos)
-
 
 ## Installation
 
@@ -71,6 +67,7 @@ sort_by = "date"
 - [ ] Math rendering (WIP)
 - [ ] Other shortcodes (WIP)
 - [ ] Multilanguage support (WIP)
+- [ ] Dark mode
 
 ## Options
 
