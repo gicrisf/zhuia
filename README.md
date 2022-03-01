@@ -17,6 +17,7 @@ It is especially optimized for mobile navigation (optionally without JavaScript,
   - [Footer](#footer)
 - [Name](#name)
 - [Genesis](#genesis)
+- [Donate](#donate)
 - [License](#license)
 
 ## Installation
@@ -143,6 +144,11 @@ The theme is built on **Spectre** CSS framework, so I found reasonable evoking a
 
 This theme is based on a Pelican theme I originally made for my blog, which was in turn based on the 
 Grav theme [Quark](https://github.com/getgrav/grav-theme-quark).
+
+## Donate
+Did you liked this theme? Make a donation and support new features!
+
+![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V425BFU)
 
 ## License
 
