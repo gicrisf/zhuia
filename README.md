@@ -148,7 +148,7 @@ Grav theme [Quark](https://github.com/getgrav/grav-theme-quark).
 ## Donate
 Did you liked this theme? Make a donation and support new features!
 
-![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V425BFU)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V425BFU)
 
 ## License
 
