@@ -1,45 +1,47 @@
-/** Extra columns spacing **/
-.extra-spacing:not(.col-12), :not(.col12) > .e-content {
-  padding-right: 1rem;
+#body-wrapper {
+  margin-top: 1rem;
+}
 
-  @include breakpoint(md) {
-    padding-right: 0;
+/* Cards */
+.card {
+  .post-title {
+    font-weight: 600;
+
+    a {
+      font-size: 32px;
+    }
+  }
+
+  .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-right: .2rem;
+
+    &.tag {
+      color: #454d5d;
+      background-color: white;
+      margin: 1px;
+      padding: 3px 5px;
+      font-family: "UniversNextPro-MediumExt",Arial,Helvetica,sans-serif;
+      border: solid 1px #b3b3b3;
+      line-height: normal;
+      text-align: center;
+      opacity: .5;
+      text-decoration: none;
+    }
+  }
+
+  .post-meta {
+    color: #acb3c2;
   }
 }
 
-.card .post-title a {
-    font-size: 1.8rem;
-}
-
-.post-title {
-  font-weight: 600;
-}
-
-.post-meta {
-  color: #acb3c2;
-}
-
-#body-wrapper {
-  margin-top: 2rem;
-}
-
-#frontmatter {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px #00000029 solid;
-}
-
-/** Breadcrumbs styling **/
+/** Breadcrumbs **/
 #breadcrumbs {
   display: flex;
-  align-items: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-
-  i {
-    display: none;
-  }
 
   span, a {
     padding: 0 0.5rem;
@@ -56,7 +58,7 @@
   }
 }
 
-/** Blog Listing **/
+/** Listing **/
 .blog-listing {
   .card {
     margin-bottom: 25px;
@@ -87,40 +89,8 @@
   }
 }
 
-/** Taxonomy listing **/
 ul.taxonomy {
   list-style: circle;
-}
-
-/** Blog Item **/
-.content-title {
-  margin-bottom: 2rem;
-
-  h2 {
-    margin-bottom: 0.5rem;
-  }
-}
-
-.label {
-  font-size: 12px;
-  text-transform: uppercase;
-
-  &.tag {
-    color: #454d5d;
-    background-color: white;
-    margin: 1px;
-    padding: 3px 5px;
-    font-family: "UniversNextPro-MediumExt",Arial,Helvetica,sans-serif;
-    border: solid 1px #b3b3b3;
-    line-height: normal;
-    text-align: center;
-    opacity: .5;
-    text-decoration: none;
-  }
-}
-
-.label.label-rounded {
-  margin-right: .2rem;
 }
 
 /** Pagination **/
@@ -128,13 +98,8 @@ ul.pagination {
   justify-content: center;
 }
 
-.prev-next {
-  margin-top: 4rem;
-}
-
-/** Sidebar specific tweaks **/
+/** Sidebar **/
 #sidebar {
-
   ul.related-pages {
     box-shadow: none;
     padding: 0;
@@ -167,7 +132,6 @@ ul.pagination {
 }
 
 /** Cards **/
-
 .card {
   border-radius: 1rem;
   margin-bottom: 2rem;

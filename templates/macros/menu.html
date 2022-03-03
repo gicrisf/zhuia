@@ -54,15 +54,25 @@
     </div>
 
 <script type="text/javascript">
-    var overlay = document.getElementById('overlay');
+  var overlay = document.getElementById('overlay');
+  var toggle = document.getElementById('toggle');
 
-    function openOverlay(){
-        if (overlay.classList.contains("open")) {
-            overlay.classList.remove("open");
-        }
-        else {
-            overlay.classList.add("open");
-        }
+  function openOverlay(){
+      // Open overlay
+      if (overlay.classList.contains("open")) {
+          overlay.classList.remove("open");
+      }
+      else {
+          overlay.classList.add("open");
+      }
+
+      // Button transition
+      if (toggle.classList.contains("active")) {
+          toggle.classList.remove("active");
+      }
+      else {
+          toggle.classList.add("active");
+      }
     }
 </script>
 {% endmacro mobile %}
