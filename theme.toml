@@ -1,0 +1,10 @@
+name = "Zhuia"
+description = "An elegant but still playful theme for Zola."
+license = "MIT"
+homepage = "https://github.com/gicrisf/zhuia"
+min_version = "0.15.0"
+demo = "https://zhuia.netlify.app"
+
+[author]
+name = "Giovanni Crisalfi"
+homepage = "https://github.com/gicrisf"
