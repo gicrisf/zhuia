@@ -1,6 +1,10 @@
 {% import "macros/pagination_page.html" as pagination_page -%}
 {% extends "index.html" -%}
 
+{%- block title %}
+    <title>{{ page.title }} - {{  config.title }}</title>
+{%- endblock title -%}
+
 {%- block breadcrumbs -%}
 {{ breadcrumbs::breadcrumbs(page=page) }}
 {%- endblock breadcrumbs -%}
