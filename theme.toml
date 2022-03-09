@@ -4,6 +4,8 @@ license = "MIT"
 homepage = "https://github.com/gicrisf/zhuia"
 min_version = "0.15.0"
 demo = "https://zhuia.netlify.app"
+created=2021-06-30
+updated=2022-03-07
 
 [author]
 name = "Giovanni Crisalfi"
