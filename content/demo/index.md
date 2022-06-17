@@ -14,6 +14,8 @@ Here's a general demo of Zola and how things look with zerm.
 
 # Header I
 
+Math: $6 \equiv 1 \bmod 5$
+
 Inline code: `println!("Wu Tang!");`
 
 Zola has built in syntax highlighting. If there's not a theme you like, you can

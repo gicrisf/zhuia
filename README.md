@@ -65,7 +65,7 @@ sort_by = "date"
 - [ ] Comments
 - [ ] Related posts (not sure about this)
 - [ ] Search bar
-- [ ] Math rendering (WIP)
+- [x] Math rendering
 - [ ] Other shortcodes (WIP)
 - [ ] Multilanguage support (WIP)
 - [ ] Dark mode

@@ -29,6 +29,9 @@ highlight_code = false
 # The max-width of the page content
 grid_size = "grid-lg"
 
+# Whether to enable KaTeX or not
+katex = true
+
 # Default author for articles
 author = "You"
 
