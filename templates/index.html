@@ -51,7 +51,9 @@
     {%- endblock rss -%}
 
     {%- block math -%}
-      {# TODO KaTeX #}
+      {% if page.extra.katex or section.extra.katex or config.extra.katex %}
+        {{ head::katex() }}
+      {% endif %}
     {%- endblock math -%}
   </head>
   <body id="top" class="sticky-footer">
