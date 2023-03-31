@@ -1,0 +1,4 @@
+{%- set json = "https://api.twitter.com/1/statuses/oembed.json?id=" ~ id ~ "&omit_script=true" -%}
+{%- set data = load_data(url=json, format="json") -%}
+
+{{ data.html | safe }}
