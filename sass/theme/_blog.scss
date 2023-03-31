@@ -4,8 +4,13 @@
 
 /* Cards */
 .card {
+  box-shadow: 0 10px 45px -9px rgba(0,0,0,0.1);
+  background: #fff;
+
   .post-title {
     font-weight: 600;
+    font-size: 3rem;
+    margin-bottom: .5rem;
 
     a {
       font-size: 32px;
@@ -63,7 +68,10 @@
   .card {
     margin-bottom: 25px;
     border: 0;
-    box-shadow: 0 10px 45px -9px rgba(0,0,0,0.1);
+
+    .post-title {
+      font-size: inherit;
+    }
 
     & .card-image:first-child img {
       opacity: 0.9;

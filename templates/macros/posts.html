@@ -163,7 +163,7 @@
       {%- endif -%}{# ./if not full #}
       <div class="card-title" style="margin-top: .25rem;">
         {%- if full -%}
-        <div class="text-center">
+        <div>
           <h1 class="post-title">{{ page.title }}</h1>
           {{ posts::meta(page=page, author=config.extra.show_author) }}
         </div>
