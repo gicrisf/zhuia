@@ -63,6 +63,8 @@ social_links = [
     {url = "https://github.com/gicrisf", name = "github"},
     # {url = "", name = "instagram"},
     # {url = "", name = "facebook"},
+    # {url = "", name = "bookstack"},
+    # {url = "", name = "dokuwiki"},
 ]
 
 
