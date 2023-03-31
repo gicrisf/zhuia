@@ -31,10 +31,17 @@
 
 {% macro home() %}
 <a class="site-logo" href="{{ config.base_url }}">
-  {% if config.title %}
-  <span>{{ config.title }}</span>
+  {% if config.extra.logo_image %}
+  <div class="col-mx-auto">
+    <figure style="margin: 8px">
+      <img class="img-responsive"
+           style="max-height: 45px"
+           alt="frontmatter image"
+           src="{{ get_url(path=config.extra.logo_image) }}">
+    </figure>
+  </div>
   {% else %}
-  <span>Zhuia</span>
+  <span>{{ config.title | default(value="zhuia") }}</span>
   {% endif %}
 </a>
 {% endmacro home %}

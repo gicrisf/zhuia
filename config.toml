@@ -42,6 +42,11 @@ read_more_prompt = "read more"
 read_post_prompt = "read post"
 
 # Menu
+
+logo_image = "./logo.svg"
+# TODO add support in template
+# show_image_with_title = true
+
 hamburger_menu = true
 
 # Menu items to display. You define a url and the name of the menu item.
